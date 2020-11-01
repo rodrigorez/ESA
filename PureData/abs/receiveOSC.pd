@@ -1,0 +1,12 @@
+#N canvas 694 225 290 310 10;
+#X obj 45 25 r OSC_bus;
+#X obj 45 187 outlet;
+#X obj 45 56 oscparse;
+#X obj 45 77 list trim;
+#X text 107 102 Implementar escolha do nome do app no argumento na
+criação do objeto, f 24;
+#X obj 45 106 route app;
+#X connect 0 0 2 0;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 5 0 1 0;

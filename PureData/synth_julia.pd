@@ -5,9 +5,12 @@
 #X obj 131 408 out~;
 #N canvas 329 114 450 300 synth_1 0;
 #X obj 65 254 outlet~;
+#X text 64 47 escreva seu synth aqui1;
 #X restore 114 173 pd synth_1;
 #X obj 108 61 keyboard 17 80 2 3 0 0 empty empty;
 #X obj 408 52 declare -lib else;
 #X obj 373 5 declare -path rjlib/pd;
 #X obj 373 28 declare -path rjlib/rj;
+#X obj 62 442 outlet~;
 #X connect 1 0 0 0;
+#X connect 1 0 6 0;

@@ -1,4 +1,4 @@
-#N canvas 78 82 961 453 12;
+#N canvas 149 290 961 453 12;
 #X declare -lib else;
 #X declare -path abl_link~;
 #X declare -path abs;
@@ -16,7 +16,7 @@
 #X text 339 55 <= on/off;
 #X obj 316 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 13% 6 15 0 18
+#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 14% 6 15 0 18
 -66577 -228856 0;
 #X obj 127 248 s \$0-cpu_meter;
 #X msg 127 222 label \$1;
@@ -385,7 +385,7 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X obj 13 255 note 425 16 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
 255 0 0 INSTRUÇÕES:;
 #X obj 187 120 catch~ \$0-players;
-#N canvas 305 188 646 185 internalAPI 1;
+#N canvas 63 45 646 185 internalAPI 1;
 #N canvas 709 332 450 300 drumpad 0;
 #N canvas 329 22 443 560 pads_messages 0;
 #X msg 46 40 timer n;
@@ -839,7 +839,7 @@ off, f 35;
 #X connect 0 0 1 0;
 #X restore 819 209 pd init;
 #N canvas 161 182 927 263 drumpad 0;
-#N canvas 826 72 322 196 recorder~ 1;
+#N canvas 765 36 322 196 recorder~ 1;
 #X obj 25 12 inlet;
 #N canvas 61 23 1108 720 recorders 0;
 #X obj 6 16 inlet;
@@ -1893,11 +1893,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X text 648 56 --> mapear;
 #X obj 484 80 else/keyboard 17 80 2 3 0 0 empty empty;
 #X text 460 40 Sampler/Synth --> entrada;
-#N canvas 279 144 664 525 sampler/synth 0;
-#X obj 335 478 outlet~;
-#X text 184 135 Crie seu synth aqui;
-#X text 400 475 <-- saída de som;
-#X restore 482 180 pd sampler/synth;
+#X obj 482 180 synth_julia;
 #X connect 12 0 5 0;
 #X connect 17 0 16 1;
 #X connect 25 0 5 0;

@@ -1,4 +1,5 @@
 #N canvas 341 29 687 296 10;
+#X declare -lib else -path else;
 #N canvas 248 301 474 218 send_MessageFormat 0;
 #X obj 37 37 inlet;
 #X obj 37 158 outlet;
@@ -23,15 +24,15 @@
 #X connect 4 0 1 0;
 #X connect 4 1 5 0;
 #X connect 5 0 1 0;
-#X restore 230 71 pd receive_MessageFormat;
+#X restore 230 91 pd receive_MessageFormat;
 #X text 364 201 formata mensagem para envio;
-#X text 390 71 filtra mensagens destinadas a esta instância da abstração
+#X text 390 91 filtra mensagens destinadas a esta instância da abstração
 [pad], f 34;
 #X obj 231 245 s pad_send;
-#X obj 230 25 r pad_receive;
+#X obj 230 45 r pad_receive;
 #X obj 231 178 r \$0-button_out;
 #X text 331 179 Mensagens vindas do botão;
-#X obj 26 184 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 1
+#X obj 26 184 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
 1;
 #X obj 10 30 else/button 30 30 96 96 96 0 255 0;
 #X obj 9 6 r \$0-button_in;
@@ -47,7 +48,7 @@
 #X connect 2 0 1 0;
 #X restore 26 258 pd debug_pad_messages;
 #X f 22;
-#N canvas 291 348 773 440 messages_processor 0;
+#N canvas 321 115 773 440 messages_processor 0;
 #X obj 17 20 inlet;
 #N canvas 634 27 529 578 button_colors 0;
 #X obj 64 17 inlet;
@@ -635,12 +636,11 @@ float, f 43;
 #X connect 13 2 14 0;
 #X connect 14 0 15 0;
 #X restore 56 108 pd state;
-#N canvas 658 47 425 311 set_button_color_and_sendout_against_button_state
+#N canvas 658 47 503 311 set_button_color_and_sendout_against_button_state
 0;
 #X obj 65 22 inlet;
 #X obj 65 63 route bang;
-#X obj 65 84 t b b, f 36;
-#X obj 65 116 v \$0-pad_state;
+#X obj 171 116 v \$0-pad_state;
 #X obj 294 116 v \$0-pad_state;
 #N canvas 0 22 462 362 set 0;
 #X obj 152 15 inlet;
@@ -681,20 +681,39 @@ float, f 43;
 #X connect 14 1 1 0;
 #X restore 294 175 pd set color;
 #X obj 294 238 s \$0-button_in;
-#X obj 65 196 list prepend pad \$1;
-#X obj 65 256 s pad_receive;
-#X obj 65 217 list trim;
-#X msg 65 175 sendout_state;
+#X obj 171 196 list prepend pad \$1;
+#X obj 171 256 s pad_receive;
+#X obj 171 217 list trim;
+#X msg 171 175 sendout_state;
+#X obj 65 84 t b b b, f 36;
+#N canvas 692 118 450 191 saveBehaviorHack 0;
+#X text 41 28 Quando se muda a cor do botão na lib ELSE beta32 \,
+ao fechar o patch o pad abre um popup perguntando se quer salvar o
+patch. mandando a mensagem <dirty 0> para este patch esse comportamento
+é interrompido.;
+#X obj 58 102 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
+#N canvas 260 162 450 300 github_issue 0;
+#X obj 37 37 inlet;
+#X msg 37 58 pd https://github.com/porres/pd-else/issues/823;
+#X obj 37 79 pdcontrol;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
-#X connect 2 0 3 0;
-#X connect 2 1 4 0;
-#X connect 3 0 10 0;
+#X restore 58 122 pd github_issue;
+#X connect 1 0 2 0;
+#X restore 370 11 pd saveBehaviorHack;
+#X msg 18 141 \; pd-saveBehaviorHack dirty 0, f 19;
+#X connect 0 0 1 0;
+#X connect 1 0 10 0;
+#X connect 2 0 9 0;
+#X connect 3 0 4 0;
 #X connect 4 0 5 0;
-#X connect 5 0 6 0;
-#X connect 7 0 9 0;
-#X connect 9 0 8 0;
-#X connect 10 0 7 0;
+#X connect 6 0 8 0;
+#X connect 8 0 7 0;
+#X connect 9 0 6 0;
+#X connect 10 0 12 0;
+#X connect 10 1 2 0;
+#X connect 10 2 3 0;
 #X restore 450 201 pd set_button_color_and_sendout_against_button_state
 ;
 #X obj 450 180 route button_state_color;
@@ -720,7 +739,7 @@ float, f 43;
 #X connect 23 0 24 0;
 #X connect 23 1 28 0;
 #X connect 28 0 27 0;
-#X restore 230 96 pd messages_processor;
+#X restore 230 116 pd messages_processor;
 #N canvas 503 313 661 212 init 0;
 #X obj 45 159 outlet;
 #X msg 149 80 color fg green;
@@ -742,7 +761,7 @@ float, f 43;
 #X connect 7 3 8 0;
 #X connect 7 4 6 0;
 #X connect 8 0 0 0;
-#X restore 180 74 pd init;
+#X restore 180 94 pd init;
 #N canvas 329 -647 450 560 mensagens_externas 0;
 #X msg 46 40 timer n;
 #X text 110 41 n <0-1>;
@@ -782,7 +801,7 @@ do botão, f 37;
 #X restore 33 212 pd mensagens_externas;
 #X text 302 246 saída das mensagens da abstração [pad] (todas as
 instâncias);
-#X text 318 24 mensagens recebidas pelas abstrações (todas as instâncias)
+#X text 318 44 mensagens recebidas pelas abstrações (todas as instâncias)
 ;
 #N canvas 396 263 450 170 mensagens_internas 0;
 #X msg 35 30 color <bg-fg>;
@@ -793,6 +812,7 @@ instâncias);
 #X msg 39 107 hold;
 #X text 79 108 ativa/desativa comportamento hold do botão;
 #X restore 33 234 pd mensagens_internas;
+#X obj 510 4 declare -lib else -path else;
 #X connect 0 0 4 0;
 #X connect 1 0 14 0;
 #X connect 5 0 1 0;

@@ -1,5 +1,4 @@
-#N canvas 481 18 586 588 10;
-#X declare -lib else -path else;
+#N canvas 57 171 586 573 10;
 #X msg 125 239 velocity;
 #X obj 27 443 print route_2;
 #X obj 26 396 print route_1;
@@ -37,7 +36,6 @@ que mensagens sejam enviadas a cada pad individualmente, f 58;
 #X obj 403 296 list trim;
 #X msg 440 210 hold 1;
 #X msg 451 234 hold 0;
-#X obj 394 554 declare -lib else -path else;
 #X connect 0 0 12 0;
 #X connect 3 0 18 0;
 #X connect 3 0 11 0;

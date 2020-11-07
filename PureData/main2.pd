@@ -1,9 +1,9 @@
-#N canvas 327 -912 961 453 12;
+#N canvas 167 26 961 562 12;
 #X declare -lib else;
 #X declare -path abl_link~;
 #X declare -path abs;
 #X declare -path data;
-#X obj 13 60 abs/drumpad-gui 1;
+#X obj 13 169 abs/drumpad-gui 1;
 #N canvas 0 22 450 300 CPUmeter 0;
 #X floatatom 316 233 0 0 0 0 - - -;
 #X obj 316 145 cputime;
@@ -16,7 +16,7 @@
 #X text 339 55 <= on/off;
 #X obj 316 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 11% 6 15 0 18
+#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 25% 6 15 0 18
 -66577 -228856 0;
 #X obj 127 248 s \$0-cpu_meter;
 #X msg 127 222 label \$1;
@@ -35,7 +35,7 @@
 #X connect 13 0 12 0;
 #X connect 14 0 12 0;
 #X coords 0 -1 1 1 85 30 2 100 100;
-#X restore 11 17 pd CPUmeter;
+#X restore 11 126 pd CPUmeter;
 #N canvas 274 162 721 485 else 0;
 #N canvas 84 121 540 328 pvoc.player~ 0;
 #X msg 99 81 pause;
@@ -201,23 +201,23 @@
 #X obj 516 365 else/mov.rms~ 4096 -db;
 #X text 511 23 Ferramentas para criar Sampler quantizado, f 23;
 #X text 28 21 Players de sample;
-#X restore 817 71 pd else opções;
-#X obj 187 60 bng 25 250 50 0 \$0-prepare_rec_send \$0-prepare_rec_receive
+#X restore 817 180 pd else opções;
+#X obj 187 169 bng 25 250 50 0 \$0-prepare_rec_send \$0-prepare_rec_receive
 Set REC 28 10 0 16 -258113 -1 -1;
-#X obj 187 91 bng 25 250 50 0 \$0-set_playback_send \$0-set_playback_receive
+#X obj 187 200 bng 25 250 50 0 \$0-set_playback_send \$0-set_playback_receive
 Set PLAY 28 10 0 16 -4034 -1 -1;
-#X obj 187 164 out~;
-#X obj 99 17 bpm_click;
-#X text 26 312 Depois clicar no drumpad para gravar/tocar;
-#X obj 760 17 dsp;
-#X text 639 416 - fades para cada loop;
-#X text 639 366 - quantizações BPM;
-#X text 26 286 Primeiro escolher se gravar ou tocar nos bangs vermelho
+#X obj 187 273 out~;
+#X obj 99 126 bpm_click;
+#X text 26 421 Depois clicar no drumpad para gravar/tocar;
+#X obj 760 126 dsp;
+#X text 639 525 - fades para cada loop;
+#X text 639 475 - quantizações BPM;
+#X text 26 395 Primeiro escolher se gravar ou tocar nos bangs vermelho
 e verde, f 64;
-#X obj 201 142 else/initmess set 0.85;
-#X text 38 330 Enquanto segurar o botão do mouse apertado no pad o
+#X obj 201 251 else/initmess set 0.85;
+#X text 38 439 Enquanto segurar o botão do mouse apertado no pad o
 sampler grava \, ao soltar o pad interrompe a gravação, f 52;
-#X obj 451 166 cnv 15 360 100 empty empty empty 20 12 0 14 -233017
+#X obj 451 275 cnv 15 360 100 empty empty empty 20 12 0 14 -233017
 -66577 0;
 #N canvas 495 275 242 172 volume_metronomo 0;
 #X obj 10 84 sendOSC bpm volume;
@@ -225,7 +225,7 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 10 16 0 12 -66577 -191407 -228856 10160 1;
 #X connect 1 0 0 0;
 #X coords 0 -1 1 1 134 30 2 10 10;
-#X restore 254 17 pd volume_metronomo;
+#X restore 254 126 pd volume_metronomo;
 #N canvas 528 343 524 188 entrada_de_gravação 0;
 #X obj 155 28 inlet~;
 #X obj 264 27 inlet;
@@ -241,12 +241,12 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X connect 2 0 7 0;
 #X connect 7 0 5 0;
 #X connect 8 0 7 0;
-#X restore 470 230 pd entrada_de_gravação;
+#X restore 459 341 pd entrada_de_gravação;
 #X f 24;
-#X obj 635 195 vradio 15 1 0 2 empty empty empty 0 -8 0 10 -262144
+#X obj 624 286 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
 -1 -1 1;
-#X text 654 193 entrada de microfone;
-#X text 655 210 sintetizador;
+#X text 643 284 entrada de microfone;
+#X text 644 301 sintetizador;
 #N canvas 976 181 223 141 dependências 0;
 #X obj 10 10 button 86 22 255 255 255 128 128 159;
 #X obj 10 37 sel 1;
@@ -281,8 +281,8 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X connect 0 0 1 0;
 #X connect 1 0 4 0;
 #X coords 0 -1 1 1 86 22 2 10 10;
-#X restore 816 17 pd dependências;
-#N canvas 323 -436 973 300 debugs_gerais 1;
+#X restore 816 126 pd dependências;
+#N canvas 154 209 973 300 debugs_gerais 1;
 #X obj 62 54 receiveOSC;
 #X obj 143 44 tgl 30 0 debugGeral empty debugGeral 17 7 0 10 -262130
 -1 -1 0 1;
@@ -389,14 +389,14 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X connect 34 0 28 0;
 #X connect 35 0 36 0;
 #X connect 36 0 33 0;
-#X restore 817 98 pd debugs_gerais;
-#X text 654 383 - metronomo com suporte a abl_link~;
-#X obj 622 297 note 425 14 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
+#X restore 817 207 pd debugs_gerais;
+#X text 654 492 - metronomo com suporte a abl_link~;
+#X obj 622 406 note 425 14 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
 255 0 0 ToDo:;
-#X obj 13 255 note 425 16 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
+#X obj 13 364 note 425 16 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
 255 0 0 INSTRUÇÕES:;
-#X obj 187 120 catch~ \$0-players;
-#N canvas 286 31 646 185 internalAPI 1;
+#X obj 187 229 catch~ \$0-players;
+#N canvas 286 31 646 185 internalAPI 0;
 #N canvas 652 332 507 300 drumpad 0;
 #N canvas 329 22 443 593 pads_messages 0;
 #X msg 46 40 timer n;
@@ -618,7 +618,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X connect 10 0 6 0;
 #X connect 11 0 6 0;
 #X restore 197 54 pd player~;
-#N canvas 0 44 450 300 recording_control 1;
+#N canvas 0 44 450 300 recording_control 0;
 #N canvas 625 248 448 513 set_REC 0;
 #X obj 34 449 sendOSC drumpad 1 in;
 #X msg 210 173 pad all timer 1;
@@ -658,7 +658,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X connect 14 5 15 0;
 #X connect 15 0 0 0;
 #X restore 27 22 pd set_REC;
-#N canvas 15 169 584 491 REC_from_drumpad 1;
+#N canvas 15 169 584 491 REC_from_drumpad 0;
 #X text 11 5 Messages from [drumpad];
 #N canvas 329 23 443 560 pads_messages 0;
 #X msg 46 40 timer n;
@@ -703,7 +703,7 @@ off, f 35;
 #X obj 94 230 route pad;
 #X obj 94 261 t a a a, f 44;
 #X obj 94 443 sendOSC;
-#N canvas 68 110 1148 475 set_pad_color 1;
+#N canvas 68 110 1148 475 set_pad_color 0;
 #X obj 21 16 inlet;
 #X obj 404 429 outlet;
 #X obj 21 82 list split 1;
@@ -1037,7 +1037,7 @@ off, f 35;
 #X obj 118 195 del 10;
 #X obj 78 230 list prepend set drumpad 1 in pad;
 #X obj 78 254 list append color bg lightGreen;
-#X msg 78 318 drumpad 1 in pad 0 color bg lightGreen;
+#X msg 78 318 drumpad 1 in pad 15 color bg lightGreen;
 #X obj 78 277 list trim;
 #X obj 78 412 outlet;
 #X connect 0 0 1 0;
@@ -1056,7 +1056,7 @@ off, f 35;
 #X obj 20 58 t a a a, f 111;
 #X obj 407 82 list split 1;
 #X msg 407 196 set drumpad 1 in pad \$1 state 0;
-#X msg 407 330 drumpad 1 in pad 0 state 0;
+#X msg 407 330 drumpad 1 in pad 15 state 0;
 #X obj 460 284 t b a;
 #X connect 0 0 24 0;
 #X connect 2 0 5 0;
@@ -1237,7 +1237,7 @@ off, f 35;
 #X restore 366 82 pd buffer;
 #N canvas 588 30 535 729 sampler 0;
 #X restore 366 29 pd sampler;
-#X restore 818 128 pd internalAPI;
+#X restore 818 237 pd internalAPI;
 #N canvas 0 22 450 300 provisório 0;
 #X obj 53 116 tcktk_save;
 #X msg 53 160 label \$1;
@@ -1253,8 +1253,8 @@ off, f 35;
 #X connect 3 0 7 0;
 #X connect 4 0 2 0;
 #X connect 5 0 0 0;
-#X restore 819 184 pd provisório;
-#X text 474 205 <--entrada para synth;
+#X restore 819 293 pd provisório;
+#X text 463 316 <--entrada para synth;
 #N canvas 627 244 223 141 estruturas 0;
 #X obj 10 10 button 86 22 255 255 255 128 128 159;
 #X obj 10 37 sel 1;
@@ -1272,8 +1272,8 @@ off, f 35;
 #X connect 0 0 1 0;
 #X connect 1 0 3 0;
 #X coords 0 -1 1 1 86 22 2 10 10;
-#X restore 816 42 pd estruturas;
-#X obj 674 296 note 273 14 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
+#X restore 816 151 pd estruturas;
+#X obj 674 405 note 273 14 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
 255 0 0 retificar parada por endbang do gravador. Limitar chegada do
 endbang implementando um [v \$0-estado_da_gravação];
 #N canvas 795 187 304 172 init 0;
@@ -1281,8 +1281,8 @@ endbang implementando um [v \$0-estado_da_gravação];
 #X text 175 41 reset drumpad;
 #X obj 24 17 else/initmess reset;
 #X connect 2 0 0 0;
-#X restore 819 209 pd init;
-#N canvas 161 182 1063 263 drumpad 0;
+#X restore 819 318 pd init;
+#N canvas 129 188 1063 263 drumpad 0;
 #N canvas 765 36 322 196 recorder~ 0;
 #X obj 25 12 inlet;
 #N canvas 135 -926 1108 720 recorders 0;
@@ -2347,14 +2347,40 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X connect 10 5 5 0;
 #X connect 10 6 11 0;
 #X connect 10 7 7 0;
-#X restore 818 152 pd drumpad;
-#X text 648 26 --> gravar;
-#X text 648 56 --> mapear;
-#X obj 484 80 else/keyboard 17 80 2 3 0 0 empty empty;
-#X text 460 40 Sampler/Synth --> entrada;
-#X obj 470 180 synth_julia;
+#X restore 818 261 pd drumpad;
+#X text 648 114 --> gravar;
+#X text 648 144 --> mapear;
+#X obj 484 189 else/keyboard 17 80 2 3 0 0 empty empty;
+#X obj 459 291 synth_julia;
+#X text 548 124 Sampler/Synth;
+#X text 429 96 [samples kick];
+#X text 468 146 [mic]-->;
+#X text 440 161 [drumpad]-->;
+#X text 562 142 [lfo];
+#X text 106 31 Sampler;
+#X text 176 31 ---->;
+#X text 306 31 ---->;
+#X text 236 31 Drumpad;
+#X text 223 65 Processador;
+#X text 362 31 Saída;
+#X text 256 48 |;
+#X text 644 316 último pad reproduzindo;
+#X text 549 7 LFO - transformação em Wavetable (esperando exemplo)
+;
+#X text 462 32 Processador:;
+#X text 129 47 |;
+#X text 96 64 sample based;
+#X text 96 77 sample midi;
+#X text 96 89 arpegiator;
+#X text 549 67 LFO - cutoff;
+#X text 646 68 Síntese Subtrativa (filtros) (saída geral);
+#X text 549 46 LFO - tremolo;
+#X text 549 27 LFO - vibrato - pitchshift;
+#X text 218 80 parametrizado;
+#X text 424 112 [samples hithat];
+#X text 424 128 [samples snare];
 #X connect 12 0 5 0;
 #X connect 17 0 16 1;
 #X connect 25 0 5 0;
-#X connect 37 0 16 0;
-#X coords 0 453 1 452 85 60 0;
+#X connect 36 0 16 0;
+#X coords 0 562 1 561 85 60 0;

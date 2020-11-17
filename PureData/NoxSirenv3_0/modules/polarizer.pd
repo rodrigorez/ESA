@@ -1,0 +1,84 @@
+#N canvas 0 0 1904 976 12;
+#X obj 7 7 cnv 15 146 196 empty empty POLARIZER 0 20 0 14 #a8d0b4 #000000
+0;
+#X obj 7 7 cnv 5 18 10 empty empty SND 0 5 0 10 #a8d0b4 #000000 0;
+#X obj 7 193 cnv 5 18 10 empty empty BIP 0 5 0 10 #a8d0b4 #000000 0
+;
+#X obj 17 71 hsl 128 12 -1 1 0 0 \$0-offset-send \$0-offset-recv OFFSET
+-2 -8 0 10 #dcdcdc #000000 #000000 6350 1;
+#X obj 17 125 hsl 128 12 0 1 0 0 \$0-gain-send \$0-gain-recv GAIN -2
+-8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 135 193 cnv 5 18 10 empty empty UNP 0 5 0 10 #a8d0b4 #000000
+0;
+#X obj 514 198 inlet~ SND;
+#X obj 686 274 +~ 1;
+#X obj 711 237 r \$0-offset-send;
+#X obj 686 305 /~ 2;
+#X obj 1024 732 outlet~ UNP;
+#X obj 513 733 outlet~ BIP;
+#X obj 532 640 pack f 50;
+#X obj 532 668 line~;
+#X obj 513 695 *~;
+#X obj 532 607 r \$0-gain-send;
+#X obj 1042 630 pack f 50;
+#X obj 1042 658 line~;
+#X obj 1023 685 *~;
+#X obj 395 98 loadbang;
+#X msg 395 125 0;
+#X obj 395 161 s \$0-offset-recv;
+#X obj 17 98 hsl 128 12 -1 1 0 0 \$0-invert-send \$0-invert-recv INVERT
+-2 -8 0 10 #dcdcdc #000000 #000000 6350 1;
+#X obj 694 642 pack f 50;
+#X obj 694 670 line~;
+#X obj 675 697 *~;
+#X obj 694 609 r \$0-gain-send;
+#X obj 675 735 outlet~ INV;
+#X obj 48 193 cnv 5 18 10 empty empty INV 0 5 0 10 #a8d0b4 #000000
+0;
+#X obj 646 377 r \$0-invert-send;
+#X obj 355 194 s \$0-invert-recv;
+#X obj 615 416 *~ -1;
+#X obj 835 644 pack f 50;
+#X obj 835 672 line~;
+#X obj 816 699 *~;
+#X obj 835 611 r \$0-gain-send;
+#X obj 94 193 cnv 5 18 10 empty empty IUN 0 5 0 10 #a8d0b4 #000000
+0;
+#X obj 797 419 *~ -1;
+#X obj 816 737 outlet~ IUN;
+#X msg 309 420 compatibility 0.47;
+#X msg 309 459 send pd;
+#X obj 309 381 loadbang;
+#X connect 6 0 7 0;
+#X connect 6 0 14 0;
+#X connect 6 0 31 0;
+#X connect 7 0 9 0;
+#X connect 8 0 7 1;
+#X connect 9 0 18 0;
+#X connect 9 0 37 0;
+#X connect 12 0 13 0;
+#X connect 13 0 14 1;
+#X connect 14 0 11 0;
+#X connect 15 0 12 0;
+#X connect 15 0 16 0;
+#X connect 16 0 17 0;
+#X connect 17 0 18 1;
+#X connect 18 0 10 0;
+#X connect 19 0 20 0;
+#X connect 20 0 21 0;
+#X connect 20 0 30 0;
+#X connect 23 0 24 0;
+#X connect 24 0 25 1;
+#X connect 25 0 27 0;
+#X connect 26 0 23 0;
+#X connect 29 0 31 1;
+#X connect 29 0 37 1;
+#X connect 31 0 25 0;
+#X connect 32 0 33 0;
+#X connect 33 0 34 1;
+#X connect 34 0 38 0;
+#X connect 35 0 32 0;
+#X connect 37 0 34 0;
+#X connect 39 0 40 0;
+#X connect 41 0 39 0;
+#X coords 0 -1 1 1 150 200 2 5 5;

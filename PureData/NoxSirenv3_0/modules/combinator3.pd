@@ -1,0 +1,100 @@
+#N canvas 0 0 1904 976 12;
+#X obj 7 7 cnv 15 146 196 empty empty COMBINATOR-3 0 20 0 14 #a8d0b4
+#000000 0;
+#X obj 7 7 cnv 5 18 10 empty empty CH1 0 5 0 10 #a8d0b4 #000000 0;
+#X obj 48 7 cnv 5 18 10 empty empty CH2 0 5 0 10 #a8d0b4 #000000 0
+;
+#X obj 7 193 cnv 5 18 10 empty empty OUT 0 5 0 10 #a8d0b4 #000000 0
+;
+#X obj 17 50 hsl 128 12 0 1 0 0 \$0-ampch1-send \$0-ampch1-recv AMP-CH1
+-2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 17 78 hsl 128 12 0 1 0 0 \$0-ampch2-send \$0-ampch2-recv AMP-CH2
+-2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 288 90 inlet~ CH1;
+#X obj 428 89 inlet~ CH2;
+#X obj 289 229 *~;
+#X obj 307 167 pack f 50;
+#X obj 307 203 line~;
+#X obj 307 139 r \$0-ampch1-send;
+#X obj 427 231 *~;
+#X obj 445 169 pack f 50;
+#X obj 445 205 line~;
+#X obj 347 318 +~;
+#X obj 36 193 cnv 5 18 10 empty empty CH1 0 5 0 10 #a8d0b4 #000000
+0;
+#X obj 71 193 cnv 5 18 10 empty empty CH2 0 5 0 10 #a8d0b4 #000000
+0;
+#X obj 350 513 outlet~ OUT;
+#X obj 451 391 outlet~ CH1;
+#X obj 564 391 outlet~ CH2;
+#X obj 445 141 r \$0-ampch2-send;
+#X obj 17 160 hsl 128 12 0 1 0 0 \$0-unison-send \$0-unison-recv UNISON
+-2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 955 222 r \$0-unison-send;
+#X obj 955 257 s \$0-ampch1-recv;
+#X obj 963 291 s \$0-ampch2-recv;
+#X obj 578 238 *~;
+#X obj 596 176 pack f 50;
+#X obj 596 212 line~;
+#X obj 348 353 +~;
+#X obj 579 89 inlet~ CH3;
+#X obj 596 148 r \$0-ampch3-send;
+#X obj 971 324 s \$0-ampch3-recv;
+#X obj 658 391 outlet~ CH3;
+#X obj 17 106 hsl 128 12 0 1 0 0 \$0-ampch3-send \$0-ampch3-recv AMP-CH3
+-2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 96 7 cnv 5 18 10 empty empty CH3 0 5 0 10 #a8d0b4 #000000 0
+;
+#X obj 107 193 cnv 5 18 10 empty empty CH3 0 5 0 10 #a8d0b4 #000000
+0;
+#X obj 17 133 hsl 128 12 0 1 0 0 \$0-ampch4-send \$0-ampch4-recv AMP-CH4
+-2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 348 382 +~;
+#X obj 741 236 *~;
+#X obj 759 174 pack f 50;
+#X obj 759 210 line~;
+#X obj 742 87 inlet~ CH4;
+#X obj 759 146 r \$0-ampch4-send;
+#X obj 768 391 outlet~ CH4;
+#X obj 981 353 s \$0-ampch4-recv;
+#X obj 135 7 cnv 5 18 10 empty empty CH4 0 5 0 10 #a8d0b4 #000000 0
+;
+#X obj 135 193 cnv 5 18 10 empty empty CH4 0 5 0 10 #a8d0b4 #000000
+0;
+#X msg 153 392 compatibility 0.47;
+#X msg 153 431 send pd;
+#X obj 153 353 loadbang;
+#X connect 6 0 8 0;
+#X connect 6 0 19 0;
+#X connect 7 0 12 0;
+#X connect 7 0 20 0;
+#X connect 8 0 15 0;
+#X connect 9 0 10 0;
+#X connect 10 0 8 1;
+#X connect 11 0 9 0;
+#X connect 12 0 15 1;
+#X connect 13 0 14 0;
+#X connect 14 0 12 1;
+#X connect 15 0 29 0;
+#X connect 21 0 13 0;
+#X connect 23 0 24 0;
+#X connect 23 0 25 0;
+#X connect 23 0 32 0;
+#X connect 23 0 45 0;
+#X connect 26 0 29 1;
+#X connect 27 0 28 0;
+#X connect 28 0 26 1;
+#X connect 29 0 38 0;
+#X connect 30 0 26 0;
+#X connect 30 0 33 0;
+#X connect 31 0 27 0;
+#X connect 38 0 18 0;
+#X connect 39 0 38 1;
+#X connect 39 0 44 0;
+#X connect 40 0 41 0;
+#X connect 41 0 39 1;
+#X connect 42 0 39 0;
+#X connect 43 0 40 0;
+#X connect 48 0 49 0;
+#X connect 50 0 48 0;
+#X coords 0 -1 1 1 150 200 2 5 5;

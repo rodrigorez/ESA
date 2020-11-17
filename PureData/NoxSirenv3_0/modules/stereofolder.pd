@@ -1,0 +1,67 @@
+#N canvas 0 0 1904 976 12;
+#X obj 7 7 cnv 15 146 196 empty empty STEREO-FOLDER 0 20 0 14 #a8d0b4
+#000000 0;
+#X obj 7 7 cnv 5 18 10 empty empty CH1 0 5 0 10 #a8d0b4 #000000 0;
+#X obj 7 193 cnv 5 18 10 empty empty L 0 5 0 10 #a8d0b4 #000000 0;
+#X obj 17 73 hsl 128 12 1 7 0 0 \$0-leftfolddepth-send \$0-leftfolddepth-recv
+LEFT-FOLD-DEPTH -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 17 133 hsl 128 12 0 1 0 0 \$0-gain-send \$0-gain-recv GAIN -2
+-8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 556 488 *~;
+#X obj 800 418 pack f 50;
+#X obj 800 446 line~;
+#X obj 557 276 *~;
+#X obj 17 102 hsl 128 12 1 7 0 0 \$0-rightfolddepth-send \$0-rightfolddepth-recv
+RIGHT-FOLD-DEPTH -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 557 114 inlet~ CH1;
+#X obj 135 193 cnv 5 18 10 empty empty R 11 5 0 10 #a8d0b4 #000000
+0;
+#X obj 955 493 *~;
+#X obj 955 281 *~;
+#X obj 800 389 r \$0-gain-send;
+#X obj 555 533 outlet~ L;
+#X obj 954 538 outlet~ R;
+#X obj 576 226 pack f 50;
+#X obj 576 250 line~;
+#X obj 973 229 pack f 50;
+#X obj 973 253 line~;
+#X obj 558 311 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
+#X obj 558 339 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
+#X obj 558 368 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
+#X obj 558 396 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
+#X obj 954 312 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
+#X obj 954 340 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
+#X obj 954 369 expr~ if($v1 > 1 \, 2-$v1 \, $v1);
+#X obj 954 397 expr~ if($v1 < -1 \, -2-$v1 \, $v1);
+#X obj 576 197 r \$0-leftfolddepth-send;
+#X obj 973 203 r \$0-rightfolddepth-send;
+#X msg 309 340 compatibility 0.47;
+#X msg 309 379 send pd;
+#X obj 309 301 loadbang;
+#X connect 5 0 15 0;
+#X connect 6 0 7 0;
+#X connect 7 0 5 1;
+#X connect 7 0 12 1;
+#X connect 8 0 21 0;
+#X connect 10 0 8 0;
+#X connect 10 0 13 0;
+#X connect 12 0 16 0;
+#X connect 13 0 25 0;
+#X connect 14 0 6 0;
+#X connect 17 0 18 0;
+#X connect 18 0 8 1;
+#X connect 19 0 20 0;
+#X connect 20 0 13 1;
+#X connect 21 0 22 0;
+#X connect 22 0 23 0;
+#X connect 23 0 24 0;
+#X connect 24 0 5 0;
+#X connect 25 0 26 0;
+#X connect 26 0 27 0;
+#X connect 27 0 28 0;
+#X connect 28 0 12 0;
+#X connect 29 0 17 0;
+#X connect 30 0 19 0;
+#X connect 31 0 32 0;
+#X connect 33 0 31 0;
+#X coords 0 -1 1 1 150 200 2 5 5;

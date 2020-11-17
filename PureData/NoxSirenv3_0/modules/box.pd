@@ -1,0 +1,17 @@
+#N canvas 0 0 1904 976 12;
+#X obj 7 7 cnv 15 146 196 empty empty empty 0 20 0 14 #a8d0b4 #000000
+0;
+#X obj 7 7 bng 8 250 50 0 empty empty X 0 4 0 10 #000000 #a8d0b4 #a8d0b4
+;
+#X obj 7 195 bng 8 250 50 0 empty empty X 0 4 0 10 #000000 #a8d0b4
+#a8d0b4;
+#X obj 145 195 bng 8 250 50 0 empty empty X 0 4 0 10 #000000 #a8d0b4
+#a8d0b4;
+#X obj 145 7 bng 8 250 50 0 empty empty X 0 4 0 10 #000000 #a8d0b4
+#a8d0b4;
+#X msg 319 268 compatibility 0.47;
+#X msg 319 307 send pd;
+#X obj 319 229 loadbang;
+#X connect 5 0 6 0;
+#X connect 7 0 5 0;
+#X coords 0 -1 1 1 150 200 2 5 5;

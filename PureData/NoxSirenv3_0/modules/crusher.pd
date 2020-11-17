@@ -1,0 +1,44 @@
+#N canvas 0 0 1904 976 12;
+#X obj 7 7 cnv 15 146 196 empty empty CRUSHER 0 20 0 14 #a8d0b4 #000000
+0;
+#X obj 7 7 cnv 5 18 10 empty empty SND 0 5 0 10 #a8d0b4 #000000 0;
+#X obj 7 193 cnv 5 18 10 empty empty OUT 0 5 0 10 #a8d0b4 #000000 0
+;
+#X obj 17 83 hsl 128 12 1 16 0 0 \$0-bitdepth-send \$0-bitdepth-recv
+BIT-DEPTH -2 -8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 17 112 hsl 128 12 0 1 0 0 \$0-gain-send \$0-gain-recv GAIN -2
+-8 0 10 #dcdcdc #000000 #000000 0 1;
+#X obj 556 112 inlet~ SND;
+#X obj 555 442 outlet~ OUT;
+#X obj 556 397 *~;
+#X obj 574 343 pack f 50;
+#X obj 574 371 line~;
+#X obj 574 314 r \$0-gain-send;
+#X obj 556 276 *~;
+#X obj 557 245 expr~ round($v1 / $f2);
+#X obj 717 78 r \$0-bitdepth-send;
+#X obj 717 107 int;
+#X obj 717 142 expr pow(2 \, $f1) - 1;
+#X obj 717 169 expr 1 / $f1;
+#X obj 889 134 loadbang;
+#X msg 888 166 1;
+#X msg 265 535 compatibility 0.47;
+#X msg 265 574 send pd;
+#X obj 265 496 loadbang;
+#X connect 5 0 12 0;
+#X connect 7 0 6 0;
+#X connect 8 0 9 0;
+#X connect 9 0 7 1;
+#X connect 10 0 8 0;
+#X connect 11 0 7 0;
+#X connect 12 0 11 0;
+#X connect 13 0 14 0;
+#X connect 14 0 15 0;
+#X connect 15 0 16 0;
+#X connect 16 0 12 1;
+#X connect 16 0 11 1;
+#X connect 17 0 18 0;
+#X connect 18 0 12 1;
+#X connect 19 0 20 0;
+#X connect 21 0 19 0;
+#X coords 0 -1 1 1 150 200 2 5 5;

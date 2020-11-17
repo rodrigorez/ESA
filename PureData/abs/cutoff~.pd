@@ -1,0 +1,29 @@
+#N canvas 496 92 378 447 12;
+#X obj 46 155 hsl 128 15 0 20000 0 1 empty empty freq -2 -8 0 10 -262144
+-1 -1 10800 1;
+#X obj 158 185 hsl 55 15 0 2 0 1 empty empty res -2 -8 0 10 -262144
+-1 -1 3400 1;
+#X obj 25 18 inlet~;
+#X obj 25 411 outlet~;
+#X obj 25 269 else/lowpass~;
+#X floatatom 43 175 5 0 0 0 - - -;
+#X msg 43 198 \$1 40;
+#X obj 43 222 vline~;
+#X floatatom 155 206 5 0 0 0 - - -;
+#X msg 155 229 \$1 40;
+#X obj 155 253 vline~;
+#X obj 227 22 inlet;
+#X obj 227 46 unpack f f;
+#X connect 0 0 5 0;
+#X connect 1 0 8 0;
+#X connect 2 0 4 0;
+#X connect 4 0 3 0;
+#X connect 5 0 6 0;
+#X connect 6 0 7 0;
+#X connect 7 0 4 1;
+#X connect 8 0 9 0;
+#X connect 9 0 10 0;
+#X connect 10 0 4 2;
+#X connect 11 0 12 0;
+#X connect 12 0 0 0;
+#X connect 12 1 1 0;

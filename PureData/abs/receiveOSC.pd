@@ -1,4 +1,4 @@
-#N canvas 694 225 290 310 10;
+#N canvas 694 225 290 240 10;
 #X obj 45 25 r OSC_bus;
 #X obj 45 187 outlet;
 #X obj 45 56 oscparse;

@@ -1,4 +1,0 @@
-#N canvas -8 -8 1920 997 12;
-#X text 602 363 put an object then :;
-#X text 600 389 type : modules/[module-name] to load any module. You
-can get the [module-name] by looking inside the modules folder.;

@@ -2,6 +2,8 @@
 #N canvas 108 229 950 474 12;
 #X declare -lib else;
 #X declare -path abl_link~;
+#X declare -path rjlib/rj;
+#X declare -path rjlib/pd;
 #X declare -path abs;
 #X declare -path data;
 #X obj 13 61 abs/drumpad-gui 1;
@@ -17,8 +19,8 @@
 #X text 339 55 <= on/off;
 #X obj 316 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 6% 6 15 0 18 -66577
--228856 0;
+#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 22% 6 15 0 18
+-66577 -228856 0;
 #X obj 127 248 s \$0-cpu_meter;
 #X msg 127 222 label \$1;
 #X obj 127 199 makefilename CPU\ %d%%;
@@ -232,10 +234,10 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X obj 10 37 sel 1;
 #X obj 11 11 cnv 15 84 20 empty empty DEPENDÊNCIAS 7 10 0 10 -66577
 -228856 0;
-#N canvas 651 107 229 209 sobre\ dependências 0;
-#X obj 4 4 cnv 15 220 200 empty empty empty 20 12 0 14 -233017 -66577
+#N canvas 651 107 259 249 sobre\ dependências 0;
+#X obj 4 4 cnv 15 250 240 empty empty empty 20 12 0 14 -233017 -66577
 0;
-#X obj 11 155 declare -lib else;
+#X obj 11 151 declare -lib else;
 #X obj 13 13 note 425 13 helvetica empty 0 22 22 22 0 255 255 255 0
 0 Depende das bibliotecas:;
 #N canvas 427 299 450 300 instalar_externals 0;
@@ -255,7 +257,9 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 0 0 externals;
 #X obj 23 33 note 425 13 helvetica empty 0 22 22 22 0 255 255 255 0
 0 - ELSE \; - abl-link~;
-#X obj 11 177 declare -path abl_link~;
+#X obj 11 173 declare -path abl_link~;
+#X obj 11 195 declare -path rjlib/rj;
+#X obj 11 217 declare -path rjlib/pd;
 #X restore 10 109 pd sobre\ dependências;
 #X msg 10 61 \; pd-sobre\ dependências vis 1;
 #X connect 0 0 1 0;
@@ -355,7 +359,7 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X msg 223 104 square;
 #X floatatom 333 90 9 0 0 0 - - -;
 #X obj 333 114 vsl 22 60 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1855 1;
+-1 -1 613 1;
 #X connect 1 0 8 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
@@ -627,7 +631,7 @@ state <0-1>, f 65;
 #X connect 13 0 14 0;
 #X connect 15 0 16 0;
 #X connect 16 0 14 0;
-#X restore 817 99 pd debugs_gerais;
+#X restore 817 129 pd debugs_gerais;
 #X obj 622 298 note 425 14 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
 255 0 0 ToDo:;
 #X obj 13 326 note 425 16 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
@@ -1544,7 +1548,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X msg 223 104 square;
 #X floatatom 333 90 9 0 0 0 - - -;
 #X obj 333 114 vsl 22 60 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 1855 1;
+-1 -1 613 1;
 #X connect 1 0 8 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
@@ -1760,7 +1764,7 @@ state <0-1>, f 65;
 #X restore 125 321 pd Patchbay;
 #X msg 97 116 processor <n> effect <<control_message>>;
 #X restore 366 108 pd processor;
-#X restore 818 129 pd internalAPI;
+#X restore 818 159 pd internalAPI;
 #N canvas 0 22 450 300 provisório 0;
 #X obj 53 116 tcktk_save;
 #X msg 53 160 label \$1;
@@ -1776,7 +1780,7 @@ state <0-1>, f 65;
 #X connect 3 0 7 0;
 #X connect 4 0 2 0;
 #X connect 5 0 0 0;
-#X restore 819 185 pd provisório;
+#X restore 819 215 pd provisório;
 #N canvas 627 244 223 141 estruturas 0;
 #X obj 10 10 button 86 22 255 255 255 128 128 159;
 #X obj 10 37 sel 1;
@@ -1809,7 +1813,7 @@ state <0-1>, f 65;
 #X connect 3 1 4 1;
 #X connect 4 0 0 0;
 #X connect 5 0 4 0;
-#X restore 819 210 pd init;
+#X restore 819 240 pd init;
 #N canvas 129 188 1063 263 drumpad 0;
 #N canvas 765 36 322 196 recorder~ 0;
 #X obj 25 12 inlet;
@@ -3572,7 +3576,7 @@ state <0-1>, f 65;
 #X connect 11 6 5 0;
 #X connect 11 7 10 0;
 #X connect 11 8 7 0;
-#X restore 818 153 pd drumpad;
+#X restore 818 183 pd drumpad;
 #N canvas 777 96 367 300 ToDo_fila 0;
 #X text 16 81 - fades para cada loop;
 #X text 16 11 - quantizações BPM;
@@ -3652,7 +3656,7 @@ e um geral, f 39;
 #X connect 25 0 20 0;
 #X restore 444 18 pd anotaçõesReunião;
 #X obj 267 189 catch~ \$0-processor;
-#N canvas 413 326 450 300 bugs 0;
+#N canvas 413 326 450 300 bugs 1;
 #X text 34 49 - drumpad precisa clicar 2x pra parar play;
 #X text 15 20 BUGS CONHECIDOS:;
 #X restore 651 266 pd bugs;
@@ -3679,6 +3683,28 @@ e um geral, f 39;
 #X connect 7 0 1 0;
 #X connect 7 1 2 0;
 #X restore 150 285 pd vu_meter;
+#N canvas 591 305 299 145 rjdj 0;
+#X text 30 25 EFEITOS;
+#N canvas 697 246 450 294 rjdj-efeitos 0;
+#X obj 31 50 e_agc;
+#X obj 31 74 e_dynproc;
+#X obj 301 53 e_dubdel;
+#X obj 300 80 e_graindelread;
+#X text 290 16 na manga;
+#X text 26 18 pretendo_usar/usados;
+#X obj 302 110 e_lop2;
+#X obj 302 136 e_lop4;
+#X obj 302 159 e_noclickdel;
+#X obj 304 187 e_pan;
+#X obj 306 215 e_stereowidener;
+#X obj 305 242 e_phaser;
+#X obj 31 98 e_pitchshift;
+#X obj 31 123 e_platereverb;
+#X obj 32 148 e_reverb;
+#X obj 31 174 e_scompress;
+#X restore 93 25 pd rjdj-efeitos;
+#X text 30 79 SYNTHS:;
+#X restore 817 94 pd rjdj opções;
 #X connect 10 0 5 0;
 #X connect 26 0 5 0;
 #X connect 26 0 34 0;

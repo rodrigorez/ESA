@@ -1,5 +1,5 @@
-#N struct 1414-cell float x float y float cellsize float color;
-#N canvas 111 283 950 474 12;
+#N struct 1423-cell float x float y float cellsize float color;
+#N canvas 108 229 950 474 12;
 #X declare -lib else;
 #X declare -path abl_link~;
 #X declare -path abs;
@@ -17,8 +17,8 @@
 #X text 339 55 <= on/off;
 #X obj 316 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 25% 6 15 0 18
--66577 -228856 0;
+#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 6% 6 15 0 18 -66577
+-228856 0;
 #X obj 127 248 s \$0-cpu_meter;
 #X msg 127 222 label \$1;
 #X obj 127 199 makefilename CPU\ %d%%;
@@ -320,7 +320,7 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X obj 332 227 sendOSC drumpad in buffer in;
 #X floatatom 397 175 6 0 0 0 - - -;
 #X msg 397 201 all ms \$1;
-#N canvas 19 40 193 220 EFEITOS 1;
+#N canvas 19 40 193 220 EFEITOS 0;
 #N canvas 512 215 450 242 LFO 0;
 #N canvas 406 299 568 227 LFO_messages 0;
 #X text 70 42 float;
@@ -355,7 +355,7 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X msg 223 104 square;
 #X floatatom 333 90 9 0 0 0 - - -;
 #X obj 333 114 vsl 22 60 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5617 1;
+-1 -1 1855 1;
 #X connect 1 0 8 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
@@ -458,7 +458,7 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X connect 8 0 7 0;
 #X connect 9 0 7 0;
 #X restore 27 109 pd Pitch-Shift;
-#N canvas 227 58 729 458 Patchbay 1;
+#N canvas 227 58 729 458 Patchbay 0;
 #N canvas 1109 -505 540 275 patchbay_messages 0;
 #X msg 21 15 processor 1 patchbay 1 pad <n> effect <<effect_name>>
 state <0-1>, f 65;
@@ -486,7 +486,7 @@ state <0-1>, f 65;
 #X msg 387 101 tremolo;
 #X msg 478 101 pitch_shift;
 #X msg 617 101 cutoff;
-#X obj 226 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 226 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 226 76 t b f;
 #X obj 305 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -498,7 +498,7 @@ state <0-1>, f 65;
 #X obj 478 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 478 76 t b f;
-#X obj 617 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 617 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 617 76 t b f;
 #X msg 419 222 state \$1;
@@ -563,7 +563,7 @@ state <0-1>, f 65;
 #X text 193 91 (0-15);
 #X obj 66 197 sendOSC processor 1 effect cutoff;
 #X obj 25 53 hsl 60 15 0.01 19000 1 0 empty empty empty -2 -8 0 10
--262144 -1 -1 5900 1;
+-262144 -1 -1 0 1;
 #X connect 0 0 9 0;
 #X connect 1 0 0 0;
 #X connect 2 0 3 0;
@@ -1544,7 +1544,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X msg 223 104 square;
 #X floatatom 333 90 9 0 0 0 - - -;
 #X obj 333 114 vsl 22 60 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 5617 1;
+-1 -1 1855 1;
 #X connect 1 0 8 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
@@ -1797,11 +1797,18 @@ state <0-1>, f 65;
 #X restore 816 43 pd estruturas;
 #X obj 674 297 note 273 14 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
 255 0 0 Trabalhar no processador parametrizado;
-#N canvas 589 187 308 128 init 0;
-#X obj 24 71 sendOSC drumpad in;
+#N canvas 589 187 308 172 init 0;
+#X obj 24 131 sendOSC drumpad in;
 #X text 151 46 reset drumpad;
-#X obj 24 17 else/initmess reset;
-#X connect 2 0 0 0;
+#X obj 24 17 else/initmess list reset;
+#X obj 24 41 t b a;
+#X obj 24 104 else/message;
+#X obj 24 65 del 100;
+#X connect 2 0 3 0;
+#X connect 3 0 5 0;
+#X connect 3 1 4 1;
+#X connect 4 0 0 0;
+#X connect 5 0 4 0;
 #X restore 819 210 pd init;
 #N canvas 129 188 1063 263 drumpad 0;
 #N canvas 765 36 322 196 recorder~ 0;
@@ -2822,6 +2829,8 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X msg 728 141 reset;
 #X obj 48 97 t b b b b b b b b, f 93;
 #X text 740 119 reset processor audio signal connections;
+#X obj 55 79 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+-1;
 #X connect 0 0 11 0;
 #X connect 1 0 6 0;
 #X connect 2 0 4 0;
@@ -2845,6 +2854,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X connect 24 5 15 0;
 #X connect 24 6 12 0;
 #X connect 24 7 22 0;
+#X connect 26 0 24 0;
 #X restore 995 197 pd reset;
 #N canvas 271 308 254 259 pads_task 0;
 #X obj 23 22 inlet;
@@ -2881,8 +2891,8 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X connect 5 0 1 0;
 #X restore 859 197 pd pads_recording;
 #X obj 47 146 t a a a a a a a a a, f 133;
-#N canvas 544 -962 863 346 processor 1;
-#N canvas 293 -545 718 441 input_audio_connections 1;
+#N canvas 184 183 863 346 processor 0;
+#N canvas 293 -545 718 441 input_audio_connections 0;
 #X obj 45 65 catch~ \$0-player_12;
 #X obj 45 147 catch~ \$0-player_8;
 #X obj 45 229 catch~ \$0-player_4;
@@ -3362,7 +3372,6 @@ unit, f 66;
 #X restore 103 368 pd cables;
 #X text 218 88 ______________________________________________________________
 , f 63;
-#X obj 203 134 else/mtx.ctl 16 5 29 0 0 0 0 0 0 0 0 0 0 0 0;
 #X text 159 140 clean;
 #X text 91 266 |;
 #X text 91 134 |;
@@ -3524,8 +3533,13 @@ state <0-1>, f 65;
 #X connect 9 0 0 0;
 #X connect 10 0 0 0;
 #X restore 97 34 pd patchbay_input_messages;
-#X connect 35 0 33 0;
-#X connect 41 0 35 0;
+#X msg 354 38 columns \$1;
+#X msg 444 38 rows \$1;
+#X msg 514 38 size \$1;
+#X text 601 13 [else/mtx.ctl 16 5 29];
+#X obj 201 133 else/mtx.ctl 16 5 29 0 0 0 0 0 0 0 0 0 0 0 0;
+#X connect 40 0 45 0;
+#X connect 45 0 33 0;
 #X coords 0 -1 1 1 600 180 1 100 110;
 #X restore 44 81 pd patchbay;
 #N canvas 477 285 391 260 output_audio_connections 0;
@@ -3569,7 +3583,7 @@ state <0-1>, f 65;
 e um geral, f 39;
 #X restore 799 433 pd ToDo_fila;
 #X obj 318 63 tgl 45 0 \$0_loopToggle_send \$0_loopToggle_receive LOOP
-3 21 0 16 -262130 -260097 -260097 1 1;
+3 21 0 16 -262130 -260097 -260097 0 1;
 #N canvas 0 22 1179 578 anotaçõesReunião 0;
 #X obj 344 444 else/keyboard 17 80 1 3 0 0 empty empty;
 #X text 132 67 Sampler;
@@ -3651,9 +3665,9 @@ e um geral, f 39;
 #N canvas 0 22 450 300 vu_meter 0;
 #X obj 92 47 inlet~;
 #X obj 86 138 nbx 6 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -26.8149 256;
+-228856 -1 -1 -999 256;
 #X obj 185 137 nbx 6 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 -19.7433 256;
+-228856 -1 -1 -999 256;
 #X text 59 137 RMS;
 #X text 153 136 Peak;
 #X obj 86 160 s \$0-rms;

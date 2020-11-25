@@ -1,4 +1,5 @@
 #N canvas 291 215 877 330 10;
+#X declare -path ../pd;
 #N canvas 156 167 851 478 REFERENCE 0;
 #X text 128 120 Name: e_agc;
 #X text 128 137 Summary: automatic gain control for RjDj;
@@ -13,6 +14,7 @@ you should use it directly after [soundinput].;
 #X obj 520 94 e_agc;
 #X obj 521 152 soundoutput;
 #X text 28 28 e_agc - automatic gain control;
+#X obj 719 269 declare -path ../pd;
 #X connect 1 0 2 0;
 #X connect 2 0 3 0;
 #X connect 2 0 3 1;

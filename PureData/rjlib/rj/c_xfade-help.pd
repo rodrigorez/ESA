@@ -1,4 +1,5 @@
 #N canvas 89 104 979 529 10;
+#X declare -path ../pd;
 #X obj 597 95 hsl 128 15 0 1 0 0 empty empty 0-1 -2 -8 1 10 -262144
 -1 -1 0 1;
 #X obj 594 146 pack 0 10;
@@ -31,6 +32,7 @@ this is connected to [vline~];
 #X coords 0 -1 1 1 450 450 1 100 100;
 #X restore 18 39 pd REFERENCE;
 #X text 18 16 c_xfade - linear crossfade;
+#X obj 820 458 declare -path ../pd;
 #X connect 0 0 5 0;
 #X connect 1 0 6 2;
 #X connect 2 0 6 0;

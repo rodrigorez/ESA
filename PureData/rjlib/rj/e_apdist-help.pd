@@ -1,4 +1,5 @@
 #N canvas 216 127 967 506 10;
+#X declare -path ../pd;
 #X obj 519 98 openpanel;
 #X msg 519 76 bang;
 #X obj 691 42 hsl 128 15 0 127 0 0 empty empty lop 20 7 1 10 -262144
@@ -59,6 +60,7 @@ the sample rate to generate aliasing. The algorithm is described in
 #X text 114 257 Outlet 0: distorted audio signal.;
 #X coords 0 -1 1 1 450 450 1 100 100;
 #X restore 21 35 pd REFERENCE;
+#X obj 813 449 declare -path ../pd;
 #X connect 0 0 13 0;
 #X connect 1 0 0 0;
 #X connect 2 0 12 0;

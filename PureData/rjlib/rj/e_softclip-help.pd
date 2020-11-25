@@ -1,4 +1,5 @@
 #N canvas 20 40 865 529 10;
+#X declare -path ../pd;
 #X obj 492 143 mtof;
 #X floatatom 492 122 5 0 0 0 - - -;
 #X obj 492 314 soundoutput;
@@ -44,6 +45,7 @@ waveshaper.;
 #X obj 91 371 e_bitcrusher;
 #X obj 186 371 e_apdist;
 #X obj 253 371 e_alias;
+#X obj 730 24 declare -path ../pd;
 #X connect 0 0 11 0;
 #X connect 1 0 0 0;
 #X connect 3 0 4 1;

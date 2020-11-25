@@ -1,8 +1,9 @@
-#N struct 1113-symarray float x array symbols 1113-sym;
-#N struct 1113-sym symbol name float on;
+#N struct 7512-symarray float x array symbols 7512-sym;
+#N struct 7512-sym symbol name float on;
 #N canvas 34 60 877 510 10;
 #X declare -path .;
 #X declare -path .;
+#X declare -path ../pd;
 #N canvas 219 25 1041 569 detailed_help 0;
 #X obj 719 26 declare -path .;
 #X obj 19 297 soundoutput;
@@ -68,7 +69,7 @@ accepts. They all expect values in a range of 0-1.;
 #X symbolatom 350 271 20 0 0 0 - - -;
 #X obj 452 251 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 11 256;
+-262144 -1 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 20 154 makenote 127 300;
 #X obj 307 157 hradio 15 1 0 15 empty empty empty 0 -8 0 10 -262144
@@ -348,6 +349,7 @@ is dedicated to the wisdom of La Roux manager "8 bit" Aaron. ajf2010
 #X obj 570 89 pack;
 #X obj 570 52 notein;
 #X obj 570 119 s_chip \$0-TAG;
+#X obj 718 471 declare -path ../pd;
 #X connect 7 0 9 0;
 #X connect 8 0 7 0;
 #X connect 8 1 7 1;

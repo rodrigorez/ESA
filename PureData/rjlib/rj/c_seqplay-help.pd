@@ -1,4 +1,5 @@
 #N canvas 136 79 945 613 10;
+#X declare -path ../pd;
 #X obj 472 197 c_seqplay;
 #X obj 471 393 soundoutput;
 #X obj 471 344 *~ 0.2;
@@ -100,6 +101,7 @@ polypressure cc pgm pitchwheel;
 #X restore 10 56 pd REFERENCE;
 #X text 726 196 single-step forward;
 #X text 725 209 SUPRESSING MESSAGE-SENDING;
+#X obj 791 525 declare -path ../pd;
 #X connect 0 0 26 0;
 #X connect 0 1 10 0;
 #X connect 0 2 11 0;

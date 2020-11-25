@@ -1,4 +1,5 @@
-#N canvas 1449 154 914 526 10;
+#N canvas 136 195 914 526 10;
+#X declare -path ../pd;
 #X floatatom 674 155 5 0 0 1 Bandwidth - -;
 #X floatatom 574 155 5 0 0 1 Frequency - -;
 #N canvas 0 22 450 300 show 0;
@@ -14,7 +15,7 @@
 #X connect 4 0 5 0;
 #X connect 5 0 2 0;
 #X restore 574 283 pd show;
-#X msg 574 344 1.99557 -0.998816 0.000811275 0.00162255 0.000811275
+#X msg 574 344 1.99877 -0.999456 0.000171287 0.000342574 0.000171287
 ;
 #X obj 574 231 u_lowpass;
 #X obj 523 340 noise~;
@@ -53,6 +54,7 @@ filter.;
 #X obj 574 99 t b b;
 #X msg 674 132 3;
 #X msg 574 132 200;
+#X obj 777 28 declare -path ../pd;
 #X connect 0 0 4 1;
 #X connect 1 0 4 0;
 #X connect 2 0 17 0;

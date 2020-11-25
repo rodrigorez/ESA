@@ -1,4 +1,5 @@
-#N canvas 185 305 935 524 10;
+#N canvas 195 74 721 524 10;
+#X declare -path ../pd;
 #X msg 334 175 pitch \$1;
 #X floatatom 308 126 5 0 0 0 - - -;
 #X obj 218 296 soundoutput;
@@ -35,6 +36,7 @@
 #X text 28 70 This isn't finished yet!;
 #X floatatom 134 128 5 0 0 0 - - -;
 #X obj 134 167 mtof;
+#X obj 487 408 declare -path ../pd;
 #X connect 0 0 29 1;
 #X connect 1 0 11 0;
 #X connect 3 0 29 0;

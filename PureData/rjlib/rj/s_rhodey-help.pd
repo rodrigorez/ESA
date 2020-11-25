@@ -1,6 +1,7 @@
 #N canvas 413 82 803 659 10;
+#X declare -path ../pd;
 #X obj 426 338 hsl 128 15 0 1 0 0 empty empty tone_(0...1) 20 7 1 10
--262144 -1 -1 6200 1;
+-262144 -1 -1 0 1;
 #X obj 179 371 makenote 100 100;
 #X obj 179 394 pack 0 0;
 #X obj 178 531 soundoutput;
@@ -52,7 +53,7 @@
 #X connect 20 0 2 1;
 #X connect 21 0 4 0;
 #X restore 179 335 pd random notes;
-#X obj 179 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 179 313 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X floatatom 195 417 5 0 0 3 pitch - -;
 #X floatatom 288 415 5 0 0 3 velocity - -;
@@ -91,6 +92,7 @@ envelopes (0-127 \, default 127) (this is an exotic parameter...);
 #X floatatom 592 338 5 0 0 0 - - -;
 #X msg 592 360 decay \$1;
 #X text 230 155 decay: decay of note in msec (default: 1500);
+#X obj 654 22 declare -path ../pd;
 #X connect 0 0 14 0;
 #X connect 1 0 2 0;
 #X connect 1 0 6 0;

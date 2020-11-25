@@ -1,4 +1,5 @@
 #N canvas 250 119 894 548 10;
+#X declare -path ../pd;
 #X obj 509 262 soundoutput;
 #X obj 651 256 tabwrite~ \$0-scope;
 #N canvas 0 0 450 300 (subpatch) 0;
@@ -6,7 +7,7 @@
 #X coords 0 1 441 -1 200 140 1;
 #X restore 507 332 graph;
 #X obj 651 234 metro 100;
-#X obj 651 215 tgl 15 0 empty empty scope 17 7 1 10 -262144 -1 -1 1
+#X obj 651 215 tgl 15 0 empty empty scope 17 7 1 10 -262144 -1 -1 0
 1;
 #X msg 667 170 dry \$1;
 #X floatatom 667 123 5 0 0 1 dry_wet - -;
@@ -37,6 +38,7 @@ the number of steps that a signal will be sampled at.;
 #X text 19 10 e_bitcrusher - distort by reducing the bitdepth of a
 signal to generate aliasing;
 #X obj 510 97 osc~ 220;
+#X obj 743 498 declare -path ../pd;
 #X connect 3 0 1 0;
 #X connect 4 0 3 0;
 #X connect 5 0 9 1;

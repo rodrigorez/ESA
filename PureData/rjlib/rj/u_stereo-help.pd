@@ -1,4 +1,5 @@
 #N canvas 117 22 836 517 10;
+#X declare -path ../pd;
 #X obj 563 249 u_stereo e_alias ali1;
 #X obj 563 170 osc~ 220;
 #X msg 686 225 freq \$1;
@@ -31,6 +32,7 @@ inlet. Parameters depends on the effect used.;
 ;
 #X text 89 29 - convert a mono effect to stereo;
 #X text 471 57 Example:;
+#X obj 698 41 declare -path ../pd;
 #X connect 0 0 3 0;
 #X connect 0 1 3 1;
 #X connect 1 0 0 0;

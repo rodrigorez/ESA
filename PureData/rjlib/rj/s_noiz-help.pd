@@ -1,8 +1,9 @@
-#N struct 1005-symarray float x array symbols 1005-sym;
-#N struct 1005-sym symbol name float on;
+#N struct 9430-symarray float x array symbols 9430-sym;
+#N struct 9430-sym symbol name float on;
 #N canvas 324 183 877 510 10;
 #X declare -path .;
 #X declare -path .;
+#X declare -path ../pd;
 #N canvas 126 136 1041 569 detailed_help 0;
 #X obj 719 26 declare -path .;
 #X obj 21 294 soundoutput;
@@ -66,7 +67,7 @@ accepts. They all expect values in a range of 0-1.;
 #X symbolatom 350 271 20 0 0 0 - - -;
 #X obj 466 249 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 7 256;
+-262144 -1 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 21 154 makenote 127 300;
 #X floatatom 112 62 5 0 0 0 - - -;
@@ -355,6 +356,7 @@ ajf2010;
 #X obj 570 52 notein;
 #X obj 570 119 s_noiz \$0-TAG;
 #X text 7 14 s_noiz - multiband noise synth with modulation;
+#X obj 736 469 declare -path ../pd;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
 #X connect 7 1 6 1;

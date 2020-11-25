@@ -1,4 +1,5 @@
 #N canvas 33 40 812 519 10;
+#X declare -path ../pd;
 #N canvas 397 140 536 444 demux 0;
 #X obj 109 67 inlet~;
 #X obj 177 66 inlet~;
@@ -50,6 +51,7 @@ signal.;
 ;
 #X obj 18 30 s_pinknoise;
 #X text 119 31 - pinkish noise source;
+#X obj 668 30 declare -path ../pd;
 #X connect 0 0 4 0;
 #X connect 0 0 4 1;
 #X connect 1 0 0 2;

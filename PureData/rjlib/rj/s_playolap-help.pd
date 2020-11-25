@@ -1,4 +1,5 @@
 #N canvas 62 69 999 506 10;
+#X declare -path ../pd;
 #X msg 787 130 open;
 #X floatatom 865 264 8 0 0 3 dur_in_smps - -;
 #X floatatom 818 231 8 0 0 3 dur_in_ms - -;
@@ -55,6 +56,7 @@ effect is a latency of duration "chunk-size".;
 #X obj 626 451 s RJLIB;
 #X msg 626 420 sf-samplerate 44100;
 #X text 619 396 Set soundfile samplerate globally:;
+#X obj 848 462 declare -path ../pd;
 #X connect 0 0 32 0;
 #X connect 4 0 3 0;
 #X connect 4 1 2 0;

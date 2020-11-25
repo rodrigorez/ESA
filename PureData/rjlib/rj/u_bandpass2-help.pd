@@ -1,4 +1,5 @@
 #N canvas 240 143 845 532 10;
+#X declare -path ../pd;
 #X obj 423 224 mtof;
 #X floatatom 560 196 5 0 0 2 BW - -;
 #X floatatom 423 192 5 0 0 2 freq - -;
@@ -40,6 +41,7 @@ or [e_beequad];
 #X text 581 263 args: <freq> <BW>;
 #X obj 423 262 u_bandpass2 1000 200;
 #X text 126 142 BW=100 per octave;
+#X obj 651 474 declare -path ../pd;
 #X connect 0 0 24 0;
 #X connect 1 0 24 1;
 #X connect 2 0 0 0;

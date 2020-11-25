@@ -1,4 +1,5 @@
 #N canvas 138 140 847 549 10;
+#X declare -path ../pd;
 #X msg 616 214 help;
 #X msg 671 136 mod \$1;
 #X msg 605 135 freq \$1;
@@ -62,6 +63,7 @@ are freq 0.8 \, mod 1.8.;
 #X obj 482 207 e_chorusr mychorus;
 #X obj 552 456 e_chorus;
 #X text 11 11 e_chorusr - stereo chorus effect with Roland design;
+#X obj 707 21 declare -path ../pd;
 #X connect 0 0 14 1;
 #X connect 1 0 14 1;
 #X connect 2 0 14 1;

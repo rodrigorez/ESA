@@ -1,4 +1,5 @@
 #N canvas 333 269 900 428 10;
+#X declare -path ../pd;
 #X obj 114 129 s_fplaytable;
 #X msg 259 92 open;
 #X floatatom 408 189 8 0 0 3 dur_in_smps - -;
@@ -25,6 +26,7 @@
 #X msg 219 260 stereo;
 #X msg 276 261 stereo 2000;
 #X text 338 36 comment;
+#X obj 765 13 declare -path ../pd;
 #X connect 0 0 7 0;
 #X connect 0 0 7 1;
 #X connect 1 0 15 0;

@@ -1,4 +1,5 @@
 #N canvas 84 40 1011 531 10;
+#X declare -path ../pd;
 #X obj 586 168 g_nbx delr;
 #X obj 586 133 g_nbx dell;
 #X obj 586 273 g_nbx bpitch;
@@ -84,6 +85,7 @@ feedback. save: report current settings to last outlet.;
 #X text 685 165 delr - delay divisor right.;
 #X text 685 179 Actual delay: basedur/delr;
 #X text 662 275 bandpass pitch in midi units (0-127);
+#X obj 874 19 declare -path ../pd;
 #X connect 0 0 3 0;
 #X connect 1 0 0 0;
 #X connect 2 0 11 0;

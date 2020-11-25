@@ -1,11 +1,12 @@
 #N canvas 89 60 980 424 10;
+#X declare -path ../pd;
 #N canvas 0 22 793 336 song 0;
 #X floatatom 163 194 5 0 0 0 - - -;
 #X floatatom 155 106 5 0 0 0 - - -;
 #X obj 155 250 pack 0 0;
 #X obj 155 171 m_majorscale 60;
 #X obj 155 271 u_makepoly 8 1 s_rhodey \$0-piano;
-#X obj 212 104 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 212 104 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #N canvas 359 223 592 507 play-a-little-song-for-me 0;
 #X msg 133 301 0 \, 2 \, 3 \, 5 \, 8 \, 9;
@@ -94,7 +95,7 @@
 #X connect 13 0 2 0;
 #X connect 13 1 2 1;
 #X restore 494 68 pd song;
-#X obj 494 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 494 46 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 494 237 soundoutput;
 #X text 548 138 There must be a matching delwrite~ in your patch;
@@ -127,6 +128,7 @@ every 200 msec. Smaller values increase the risk of clicks.;
 #X floatatom 741 179 5 0 0 1 latency - -;
 #X obj 597 197 e_noclickdel \$0-delay;
 #X text 759 199 Default latency is 200 ms.;
+#X obj 815 366 declare -path ../pd;
 #X connect 0 0 2 0;
 #X connect 0 0 7 0;
 #X connect 1 0 0 0;

@@ -1,4 +1,5 @@
 #N canvas 4 22 1051 534 10;
+#X declare -path ../pd;
 #X obj 480 151 osc~ 220;
 #X obj 480 233 *~;
 #X obj 480 277 e_reverb rev1;
@@ -63,6 +64,7 @@ rev2 \, wrapped for rjlib. Useful for making lightweight scenes.;
 #X obj 791 93 r \$0-GUI;
 #X obj 787 367 loadbang;
 #X text 702 126 Dry/Wet Mix;
+#X obj 912 20 declare -path ../pd;
 #X connect 0 0 1 0;
 #X connect 1 0 2 0;
 #X connect 2 0 5 0;

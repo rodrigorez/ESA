@@ -1,8 +1,9 @@
-#N struct 1043-symarray float x array symbols 1043-sym;
-#N struct 1043-sym symbol name float on;
-#N struct 1053-symarray float x array symbols 1053-sym;
-#N struct 1053-sym symbol name float on;
-#N canvas 379 108 651 691 10;
+#N struct 10546-symarray float x array symbols 10546-sym;
+#N struct 10546-sym symbol name float on;
+#N struct 10556-symarray float x array symbols 10556-sym;
+#N struct 10556-sym symbol name float on;
+#N canvas 379 87 651 691 10;
+#X declare -path ../pd;
 #X obj 176 376 u_makepoly 8 1 s_rhodey aasas;
 #X obj 176 315 makenote 20 1500;
 #X obj 176 343 pack 0 0;
@@ -176,6 +177,7 @@ one character long and don't contain spaces nor special characters.
 #X text 50 936 -add9 - b 3 - - 5 - - 9;
 #X restore 451 114 pd chordnames;
 #X text 73 27 m_chorddict - converts chord symbols to intervals;
+#X obj 505 25 declare -path ../pd;
 #X connect 0 0 3 0;
 #X connect 0 0 3 1;
 #X connect 1 0 2 0;

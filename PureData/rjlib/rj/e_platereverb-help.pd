@@ -1,4 +1,5 @@
 #N canvas 4 22 1102 584 10;
+#X declare -path ../pd;
 #N canvas 15 98 781 670 presets 0;
 #X obj -1 30 inlet;
 #X obj -1 68 route default large large_noexcursion huge huge_noexcursion
@@ -202,6 +203,7 @@ to any other instance of the object.;
 #X connect 28 0 29 0;
 #X connect 29 0 3 0;
 #X restore 854 37 pd Parameter Controls;
+#X obj 935 454 declare -path ../pd;
 #X connect 1 0 0 0;
 #X connect 2 0 0 0;
 #X connect 3 0 20 0;

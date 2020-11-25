@@ -1,4 +1,5 @@
 #N canvas 36 85 867 541 10;
+#X declare -path ../pd;
 #X obj 513 157 vline~;
 #X obj 531 219 noise~;
 #X obj 513 241 *~;
@@ -50,6 +51,7 @@ cut-off frequency \, q and mix level.;
 #X obj 90 373 e_lop2;
 #X obj 150 373 e_lop4;
 #X obj 210 373 e_resonzq;
+#X obj 723 28 declare -path ../pd;
 #X connect 0 0 2 0;
 #X connect 1 0 2 1;
 #X connect 2 0 14 0;

@@ -1,4 +1,5 @@
-#N canvas 79 5 1028 562 10;
+#N canvas 79 22 1028 562 10;
+#X declare -path ../pd;
 #X floatatom 601 297 5 0 0 0 - - -;
 #X msg 601 371;
 #X msg 601 121 bang;
@@ -36,6 +37,7 @@ to a settable range and with a setable maximum stepsize.;
 #X restore 38 73 pd REFERENCE;
 #X text 56 19 c_drunk - output random numbers bound to a range (random
 walk);
+#X obj 881 19 declare -path ../pd;
 #X connect 0 0 9 0;
 #X connect 2 0 5 0;
 #X connect 3 0 9 1;

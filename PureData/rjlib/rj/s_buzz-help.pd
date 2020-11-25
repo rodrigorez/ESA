@@ -1,4 +1,5 @@
 #N canvas 147 43 925 425 10;
+#X declare -path ../pd;
 #X floatatom 538 55 5 0 0 0 - - -;
 #X obj 597 281 tabwrite~ \$0-scope;
 #N canvas 0 0 450 300 (subpatch) 0;
@@ -35,6 +36,7 @@ It generates a waveform using the summation forumula: out = sqrt[(1-a^2)(1+a^2)]
 #X coords 0 -1 1 1 450 250 1 100 20;
 #X restore 21 45 pd REFERENCE;
 #X text 20 22 s_buzz - buzz harmonics generator;
+#X obj 763 324 declare -path ../pd;
 #X connect 0 0 4 0;
 #X connect 3 0 13 0;
 #X connect 4 0 14 0;

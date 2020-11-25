@@ -1,4 +1,5 @@
 #N canvas 99 64 1032 539 10;
+#X declare -path ../pd;
 #X obj 480 191 noise~;
 #X obj 481 231 e_beequad;
 #X obj 626 231 biquad~;
@@ -68,6 +69,7 @@ time made from czero/cpole.;
 #X obj 479 416 soundoutput;
 #X text 535 488 Also see these helpers for computing the coefficients
 of popular filter types.;
+#X obj 893 20 declare -path ../pd;
 #X connect 0 0 1 0;
 #X connect 0 0 2 0;
 #X connect 1 0 12 0;

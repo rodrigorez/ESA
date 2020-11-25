@@ -1,4 +1,5 @@
 #N canvas 188 141 767 516 10;
+#X declare -path ../pd;
 #X obj 496 102 noise~;
 #X obj 496 232 soundoutput;
 #X obj 562 119 mtof;
@@ -23,6 +24,7 @@ for resonance.;
 #X coords 0 -1 1 1 450 450 1 100 100;
 #X restore 9 40 pd REFERENCE;
 #X text 7 14 e_lop2 - 2-pole resonant lowpass filter with Q inlet;
+#X obj 619 474 declare -path ../pd;
 #X connect 0 0 6 0;
 #X connect 2 0 6 1;
 #X connect 3 0 2 0;

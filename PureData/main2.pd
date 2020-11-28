@@ -19,7 +19,7 @@
 #X text 339 55 <= on/off;
 #X obj 316 56 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
-#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 22% 6 15 0 18
+#X obj 100 100 cnv 15 85 30 empty \$0-cpu_meter CPU\ 26% 6 15 0 18
 -66577 -228856 0;
 #X obj 127 248 s \$0-cpu_meter;
 #X msg 127 222 label \$1;
@@ -39,176 +39,6 @@
 #X connect 14 0 12 0;
 #X coords 0 -1 1 1 85 30 2 100 100;
 #X restore 11 18 pd CPUmeter;
-#N canvas 325 196 721 485 else 0;
-#N canvas 84 121 752 328 pvoc.player~ 0;
-#X msg 99 81 pause;
-#X msg 154 80 continue;
-#X obj 257 167 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X msg 232 107 loop \$1;
-#X obj 232 83 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
-1;
-#X obj 196 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 340 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X text 361 216 <= finished;
-#X msg 140 58 open vacuous.wav;
-#X obj 175 108 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
-1;
-#X text 84 181 click: opens a new file =>, f 13;
-#X msg 36 58 open stereo.wav;
-#X obj 232 131 else/pack2 range f f;
-#X floatatom 290 93 5 0 0 0 - - -;
-#X obj 293 69 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
-#X floatatom 349 111 5 0 0 0 - - -;
-#X obj 352 90 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
-#X text 333 69 minimum;
-#X text 393 90 maximum;
-#X obj 175 190 else/pvoc.player~ stereo.wav;
-#X text 113 15 Test the main message methods of [pvoc.player~].;
-#X obj 340 167 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X text 223 166 speed;
-#X text 389 165 transposition;
-#X obj 171 222 else/out~;
-#X obj 400 274 else/canvas.active;
-#X obj 400 298 switch~;
-#X text 430 40 Na terceira vez que tocar vacuous vai dar um endbang
-e reiniciar a reprodução, f 39;
-#X connect 0 0 19 0;
-#X connect 1 0 19 0;
-#X connect 2 0 19 1;
-#X connect 3 0 19 0;
-#X connect 4 0 3 0;
-#X connect 5 0 19 0;
-#X connect 8 0 19 0;
-#X connect 9 0 19 0;
-#X connect 11 0 19 0;
-#X connect 12 0 19 0;
-#X connect 13 0 12 1;
-#X connect 14 0 13 0;
-#X connect 15 0 12 2;
-#X connect 16 0 15 0;
-#X connect 19 0 24 0;
-#X connect 19 2 6 0;
-#X connect 21 0 19 2;
-#X connect 25 0 26 0;
-#X restore 29 81 pd pvoc.player~;
-#N canvas 607 122 608 348 gran.player~ 0;
-#X msg 110 86 pause;
-#X msg 165 85 continue;
-#X obj 268 172 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X msg 243 112 loop \$1;
-#X obj 243 88 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
-1;
-#X obj 207 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X obj 351 223 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X text 372 221 <= finished;
-#X msg 151 63 open vacuous.wav;
-#X obj 186 113 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
-1;
-#X text 95 186 click: opens a new file =>, f 13;
-#X msg 47 63 open stereo.wav;
-#X obj 243 136 else/pack2 range f f;
-#X floatatom 301 98 5 0 0 0 - - -;
-#X obj 304 74 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
-#X floatatom 360 116 5 0 0 0 - - -;
-#X obj 363 95 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
--1 -1 0 1;
-#X text 344 74 minimum;
-#X text 404 95 maximum;
-#X obj 351 172 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 0 256;
-#X text 234 171 speed;
-#X text 400 170 transposition;
-#X obj 186 195 else/gran.player~ stereo.wav;
-#X text 124 20 Test the main message methods of [gran.player~].;
-#X obj 184 228 else/out~;
-#X obj 472 292 else/canvas.active;
-#X obj 472 316 switch~;
-#X connect 0 0 22 0;
-#X connect 1 0 22 0;
-#X connect 2 0 22 1;
-#X connect 3 0 22 0;
-#X connect 4 0 3 0;
-#X connect 5 0 22 0;
-#X connect 8 0 22 0;
-#X connect 9 0 22 0;
-#X connect 11 0 22 0;
-#X connect 12 0 22 0;
-#X connect 13 0 12 1;
-#X connect 14 0 13 0;
-#X connect 15 0 12 2;
-#X connect 16 0 15 0;
-#X connect 19 0 22 2;
-#X connect 22 0 24 0;
-#X connect 22 2 6 0;
-#X connect 25 0 26 0;
-#X restore 29 100 pd gran.player~;
-#N canvas 714 152 450 300 tabplayer~ 0;
-#X obj 149 44 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
-1;
-#N canvas 576 100 351 116 load 0;
-#X obj 32 52 soundfiler;
-#X obj 241 55 table \$0-violin;
-#X obj 32 76 outlet;
-#X obj 32 20 else/initmess read -resize violin.wav \$0-violin;
-#X connect 0 0 2 0;
-#X connect 3 0 0 0;
-#X restore 18 200 pd load \; sample;
-#X msg 190 68 stop;
-#X msg 188 44 start;
-#X msg 90 62 loop \$1;
-#X obj 90 40 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0 1
-;
-#X obj 296 118 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
--1 -1;
-#X text 286 147 finished;
-#X text 289 159 playing;
-#X text 228 45 (same as non zero);
-#X text 223 68 (same as zero);
-#X obj 18 263 send \$0-array_size;
-#X obj 18 239 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--228856 -1 -1 290646 256;
-#X obj 149 128 else/out~;
-#X obj 149 93 else/tabplayer~ \$0-violin;
-#X obj 304 239 else/canvas.active;
-#X obj 304 263 switch~;
-#X connect 0 0 14 0;
-#X connect 1 0 12 0;
-#X connect 2 0 14 0;
-#X connect 3 0 14 0;
-#X connect 4 0 14 0;
-#X connect 5 0 4 0;
-#X connect 12 0 11 0;
-#X connect 14 0 13 0;
-#X connect 14 1 6 0;
-#X connect 15 0 16 0;
-#X restore 30 53 pd tabplayer~;
-#X text 132 54 <-- usando este;
-#X obj 516 74 else/bpm;
-#X obj 516 262 else/autofade~;
-#X obj 516 292 else/autofade2~;
-#X obj 516 343 else/sequencer~;
-#X obj 516 319 else/sequencer;
-#X obj 515 100 else/tempo;
-#X obj 515 126 else/tempo~;
-#X obj 516 237 env~;
-#X obj 516 178 else/quantizer;
-#X obj 515 153 else/quantizer~;
-#X obj 516 365 else/mov.rms~ 4096 -db;
-#X text 511 23 Ferramentas para criar Sampler quantizado, f 23;
-#X text 28 21 Players de sample;
-#X obj 517 438 else/xselect2~;
-#X obj 517 414 else/mtx~;
-#X restore 817 72 pd else opções;
 #X obj 187 61 bng 25 250 50 0 \$0-prepare_rec_send \$0-prepare_rec_receive
 Set REC 28 10 0 16 -258113 -1 -1;
 #X obj 187 92 bng 25 250 50 0 \$0-set_playback_send \$0-set_playback_receive
@@ -359,7 +189,7 @@ sampler grava \, ao soltar o pad interrompe a gravação, f 52;
 #X msg 223 104 square;
 #X floatatom 333 90 9 0 0 0 - - -;
 #X obj 333 114 vsl 22 60 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 613 1;
+-1 -1 3561 1;
 #X connect 1 0 8 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
@@ -1548,7 +1378,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X msg 223 104 square;
 #X floatatom 333 90 9 0 0 0 - - -;
 #X obj 333 114 vsl 22 60 -1 1 0 0 empty empty empty 0 -9 0 10 -262144
--1 -1 613 1;
+-1 -1 3561 1;
 #X connect 1 0 8 0;
 #X connect 3 0 2 0;
 #X connect 4 0 2 0;
@@ -1801,21 +1631,14 @@ state <0-1>, f 65;
 #X restore 816 43 pd estruturas;
 #X obj 674 297 note 273 14 dejavu\ sans\ mono empty 0 0 0 0 0 255 255
 255 0 0 Trabalhar no processador parametrizado;
-#N canvas 589 187 308 172 init 0;
-#X obj 24 131 sendOSC drumpad in;
+#N canvas 589 186 272 131 init 0;
+#X obj 24 81 sendOSC drumpad in;
 #X text 151 46 reset drumpad;
 #X obj 24 17 else/initmess list reset;
-#X obj 24 41 t b a;
-#X obj 24 104 else/message;
-#X obj 24 65 del 100;
-#X connect 2 0 3 0;
-#X connect 3 0 5 0;
-#X connect 3 1 4 1;
-#X connect 4 0 0 0;
-#X connect 5 0 4 0;
+#X connect 2 0 0 0;
 #X restore 819 240 pd init;
 #N canvas 129 188 1063 263 drumpad 0;
-#N canvas 765 36 322 196 recorder~ 0;
+#N canvas 765 35 322 196 recorder~ 0;
 #X obj 25 12 inlet;
 #N canvas 135 -926 1108 720 recorders 0;
 #X obj 6 16 inlet;
@@ -2896,7 +2719,7 @@ from start to end. 1st float sets start and 2nd sets end (in ms);
 #X restore 859 197 pd pads_recording;
 #X obj 47 146 t a a a a a a a a a, f 133;
 #N canvas 184 183 863 346 processor 0;
-#N canvas 293 -545 718 441 input_audio_connections 0;
+#N canvas 293 -635 718 451 input_audio_connections 0;
 #X obj 45 65 catch~ \$0-player_12;
 #X obj 45 147 catch~ \$0-player_8;
 #X obj 45 229 catch~ \$0-player_4;
@@ -3609,32 +3432,6 @@ e um geral, f 39;
 #X text 128 234 LFO - vibrato - pitchshift;
 #X text 244 116 parametrizado;
 #X text 173 32 DIAGRAMA DO INSTRUMENTO;
-#X obj 670 352 cnv 15 360 100 empty empty empty 20 12 0 14 -233017
--66577 0;
-#N canvas 528 343 524 188 entrada_de_gravação 0;
-#X obj 155 28 inlet~;
-#X obj 264 27 inlet;
-#X obj 53 56 adc~;
-#X text 213 142 [pd gravador~] --> [pd recorders];
-#X text 208 127 entrada em:;
-#X obj 53 132 throw~ \$0-recorder_in;
-#X text 88 55 mic;
-#X obj 53 105 xselect~ 2 50 1;
-#X obj 264 51 + 1;
-#X connect 0 0 7 1;
-#X connect 1 0 8 0;
-#X connect 2 0 7 0;
-#X connect 7 0 5 0;
-#X connect 8 0 7 0;
-#X restore 678 418 pd entrada_de_gravação;
-#X f 24;
-#X obj 843 363 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
--1 -1 1;
-#X text 862 361 entrada de microfone;
-#X text 863 378 sintetizador;
-#X text 682 393 <--entrada para synth;
-#X obj 678 368 synth_julia;
-#X text 863 393 último pad reproduzindo;
 #X text 126 348 pitshift dos sampleados;
 #X text 298 338 ----> via botão que liga/desl pitshift por bpm;
 #X text 298 360 ----> pitshift controlado via knob;
@@ -3652,8 +3449,6 @@ e um geral, f 39;
 #X text 527 243 - filtro de cutoff (passa baixa);
 #X text 541 257 (na saída geral);
 #X text 122 125 arpeggiator;
-#X connect 21 0 20 1;
-#X connect 25 0 20 0;
 #X restore 444 18 pd anotaçõesReunião;
 #X obj 267 189 catch~ \$0-processor;
 #N canvas 413 326 450 300 bugs 1;
@@ -3683,7 +3478,7 @@ e um geral, f 39;
 #X connect 7 0 1 0;
 #X connect 7 1 2 0;
 #X restore 150 285 pd vu_meter;
-#N canvas 591 305 299 145 rjdj 0;
+#N canvas 591 305 299 145 rjdj_opções 0;
 #X text 30 25 EFEITOS;
 #N canvas 697 246 450 294 rjdj-efeitos 0;
 #X obj 31 50 e_agc;
@@ -3704,10 +3499,229 @@ e um geral, f 39;
 #X obj 31 174 e_scompress;
 #X restore 93 25 pd rjdj-efeitos;
 #X text 30 79 SYNTHS:;
-#X restore 817 94 pd rjdj opções;
-#X connect 10 0 5 0;
-#X connect 26 0 5 0;
-#X connect 26 0 34 0;
-#X connect 31 0 30 1;
-#X connect 32 0 30 0;
+#N canvas 696 255 530 300 rjdj-synths 0;
+#X text 81 28 - grungy and grainy console and cheap synth sounds;
+#X obj 24 28 s_chip;
+#X text 81 60 - synth with 4 harmonic oscillator modulating a waveshaper
+and FM stage;
+#X obj 25 63 s_cwc;
+#X text 134 101 - electronic drums;
+#X obj 24 101 s_drumelectro;
+#X text 85 136 - juno like instrument;
+#X obj 25 136 s_ejun;
+#X text 86 169 - string synthesiser;
+#X obj 26 169 s_hstr;
+#X text 96 202 - FM emulation of rhodes e-piano;
+#X obj 26 202 s_rhodey;
+#X text 86 232 - slow synth pads;
+#X obj 26 232 s_spad;
+#X text 76 262 - type B waveshaper;
+#X obj 26 262 s_wsb;
+#X restore 92 78 pd rjdj-synths;
+#X restore 817 94 pd rjdj_opções;
+#N canvas 325 196 721 485 else_opções 0;
+#N canvas 84 121 752 328 pvoc.player~ 0;
+#X msg 99 81 pause;
+#X msg 154 80 continue;
+#X obj 257 167 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X msg 232 107 loop \$1;
+#X obj 232 83 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 196 108 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 340 218 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 361 216 <= finished;
+#X msg 140 58 open vacuous.wav;
+#X obj 175 108 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 84 181 click: opens a new file =>, f 13;
+#X msg 36 58 open stereo.wav;
+#X obj 232 131 else/pack2 range f f;
+#X floatatom 290 93 5 0 0 0 - - -;
+#X obj 293 69 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 349 111 5 0 0 0 - - -;
+#X obj 352 90 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X text 333 69 minimum;
+#X text 393 90 maximum;
+#X obj 175 190 else/pvoc.player~ stereo.wav;
+#X text 113 15 Test the main message methods of [pvoc.player~].;
+#X obj 340 167 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 223 166 speed;
+#X text 389 165 transposition;
+#X obj 171 222 else/out~;
+#X obj 400 274 else/canvas.active;
+#X obj 400 298 switch~;
+#X text 430 40 Na terceira vez que tocar vacuous vai dar um endbang
+e reiniciar a reprodução, f 39;
+#X connect 0 0 19 0;
+#X connect 1 0 19 0;
+#X connect 2 0 19 1;
+#X connect 3 0 19 0;
+#X connect 4 0 3 0;
+#X connect 5 0 19 0;
+#X connect 8 0 19 0;
+#X connect 9 0 19 0;
+#X connect 11 0 19 0;
+#X connect 12 0 19 0;
+#X connect 13 0 12 1;
+#X connect 14 0 13 0;
+#X connect 15 0 12 2;
+#X connect 16 0 15 0;
+#X connect 19 0 24 0;
+#X connect 19 2 6 0;
+#X connect 21 0 19 2;
+#X connect 25 0 26 0;
+#X restore 29 81 pd pvoc.player~;
+#N canvas 607 122 608 348 gran.player~ 0;
+#X msg 110 86 pause;
+#X msg 165 85 continue;
+#X obj 268 172 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X msg 243 112 loop \$1;
+#X obj 243 88 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X obj 207 113 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X obj 351 223 bng 15 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 372 221 <= finished;
+#X msg 151 63 open vacuous.wav;
+#X obj 186 113 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#X text 95 186 click: opens a new file =>, f 13;
+#X msg 47 63 open stereo.wav;
+#X obj 243 136 else/pack2 range f f;
+#X floatatom 301 98 5 0 0 0 - - -;
+#X obj 304 74 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X floatatom 360 116 5 0 0 0 - - -;
+#X obj 363 95 hsl 128 15 0 1 0 0 empty empty empty -2 -8 0 10 -228856
+-1 -1 0 1;
+#X text 344 74 minimum;
+#X text 404 95 maximum;
+#X obj 351 172 nbx 4 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 0 256;
+#X text 234 171 speed;
+#X text 400 170 transposition;
+#X obj 186 195 else/gran.player~ stereo.wav;
+#X text 124 20 Test the main message methods of [gran.player~].;
+#X obj 184 228 else/out~;
+#X obj 472 292 else/canvas.active;
+#X obj 472 316 switch~;
+#X connect 0 0 22 0;
+#X connect 1 0 22 0;
+#X connect 2 0 22 1;
+#X connect 3 0 22 0;
+#X connect 4 0 3 0;
+#X connect 5 0 22 0;
+#X connect 8 0 22 0;
+#X connect 9 0 22 0;
+#X connect 11 0 22 0;
+#X connect 12 0 22 0;
+#X connect 13 0 12 1;
+#X connect 14 0 13 0;
+#X connect 15 0 12 2;
+#X connect 16 0 15 0;
+#X connect 19 0 22 2;
+#X connect 22 0 24 0;
+#X connect 22 2 6 0;
+#X connect 25 0 26 0;
+#X restore 29 100 pd gran.player~;
+#N canvas 714 152 450 300 tabplayer~ 0;
+#X obj 149 44 tgl 25 0 empty empty empty 17 7 0 10 -228856 -1 -1 0
+1;
+#N canvas 576 100 351 116 load 0;
+#X obj 32 52 soundfiler;
+#X obj 241 55 table \$0-violin;
+#X obj 32 76 outlet;
+#X obj 32 20 else/initmess read -resize violin.wav \$0-violin;
+#X connect 0 0 2 0;
+#X connect 3 0 0 0;
+#X restore 18 200 pd load \; sample;
+#X msg 190 68 stop;
+#X msg 188 44 start;
+#X msg 90 62 loop \$1;
+#X obj 90 40 tgl 15 0 empty empty empty 17 7 0 10 -228856 -1 -1 0 1
+;
+#X obj 296 118 bng 25 250 50 0 empty empty empty 17 7 0 10 -228856
+-1 -1;
+#X text 286 147 finished;
+#X text 289 159 playing;
+#X text 228 45 (same as non zero);
+#X text 223 68 (same as zero);
+#X obj 18 263 send \$0-array_size;
+#X obj 18 239 nbx 8 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-228856 -1 -1 290646 256;
+#X obj 149 128 else/out~;
+#X obj 149 93 else/tabplayer~ \$0-violin;
+#X obj 304 239 else/canvas.active;
+#X obj 304 263 switch~;
+#X connect 0 0 14 0;
+#X connect 1 0 12 0;
+#X connect 2 0 14 0;
+#X connect 3 0 14 0;
+#X connect 4 0 14 0;
+#X connect 5 0 4 0;
+#X connect 12 0 11 0;
+#X connect 14 0 13 0;
+#X connect 14 1 6 0;
+#X connect 15 0 16 0;
+#X restore 30 53 pd tabplayer~;
+#X text 132 54 <-- usando este;
+#X obj 516 74 else/bpm;
+#X obj 516 262 else/autofade~;
+#X obj 516 292 else/autofade2~;
+#X obj 516 343 else/sequencer~;
+#X obj 516 319 else/sequencer;
+#X obj 515 100 else/tempo;
+#X obj 515 126 else/tempo~;
+#X obj 516 237 env~;
+#X obj 516 178 else/quantizer;
+#X obj 515 153 else/quantizer~;
+#X obj 516 365 else/mov.rms~ 4096 -db;
+#X text 511 23 Ferramentas para criar Sampler quantizado, f 23;
+#X text 28 21 Players de sample;
+#X obj 517 438 else/xselect2~;
+#X obj 517 414 else/mtx~;
+#X restore 817 72 pd else_opções;
+#X obj 439 96 cnv 15 360 100 empty empty empty 20 12 0 14 -233017 -66577
+0;
+#N canvas 528 343 524 188 entrada_de_gravação 0;
+#X obj 155 28 inlet~;
+#X obj 264 27 inlet;
+#X obj 53 27 adc~;
+#X text 213 142 [pd gravador~] --> [pd recorders];
+#X text 208 127 entrada em:;
+#X obj 53 132 throw~ \$0-recorder_in;
+#X text 88 26 mic;
+#X obj 53 105 xselect~ 2 50 1;
+#X obj 264 51 + 1;
+#X obj 53 56 e_agc;
+#X connect 0 0 7 1;
+#X connect 1 0 8 0;
+#X connect 2 0 9 0;
+#X connect 7 0 5 0;
+#X connect 8 0 7 0;
+#X connect 9 0 7 0;
+#X restore 447 162 pd entrada_de_gravação;
+#X f 24;
+#X obj 612 107 vradio 15 1 0 3 empty empty empty 0 -8 0 10 -262144
+-1 -1 1;
+#X text 631 105 entrada de microfone;
+#X text 632 122 sintetizador;
+#X text 451 137 <--entrada para synth;
+#X obj 447 112 synth_julia;
+#X text 632 137 último pad reproduzindo;
+#X connect 9 0 4 0;
+#X connect 25 0 4 0;
+#X connect 25 0 33 0;
+#X connect 30 0 29 1;
+#X connect 31 0 29 0;
+#X connect 38 0 37 1;
+#X connect 42 0 37 0;
 #X coords 0 474 1 473 85 60 0;

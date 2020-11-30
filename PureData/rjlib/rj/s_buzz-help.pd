@@ -6,11 +6,11 @@
 #X array \$0-scope 2205 float 0;
 #X coords 0 1 2204 -1 200 140 1;
 #X restore 706 123 graph;
-#X obj 597 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 597 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 538 82 mtof;
 #X obj 621 53 hsl 128 15 0 0.9 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X obj 618 83 moses 1;
 #X text 633 34 Harmonicity-Env;
 #X text 679 84 don't go equal or over 1!;

@@ -1,4 +1,5 @@
 #N canvas 124 83 1087 613 10;
+#X declare -path ../pd;
 #X obj 477 57 soundinput;
 #X obj 488 212 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -110,6 +111,7 @@ you if you send a "compensate 1" message to the last inlet.;
 #X obj 743 130 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 849 155 Latency compensation.;
+#X obj 876 527 declare -path ../pd;
 #X connect 0 0 13 0;
 #X connect 5 0 6 0;
 #X connect 6 0 13 0;

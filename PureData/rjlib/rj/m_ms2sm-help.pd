@@ -1,5 +1,5 @@
-#N canvas 164 273 985 536 10;
-#N canvas 377 111 827 710 REFERENCE 1;
+#N canvas 192 126 985 536 10;
+#N canvas 377 68 827 710 REFERENCE 0;
 #X text 114 234 Inlet 0: float \, duration to convert;
 #X text 114 300 Outlet 0: duration in samples;
 #X text 114 141 Summary: convert duration in milliseconds to duration
@@ -27,7 +27,7 @@ in samples;
 #X floatatom 522 167 5 0 0 0 ms - -;
 #X floatatom 522 57 5 0 0 0 ms - -;
 #X floatatom 522 116 5 0 0 0 samples - -;
-#N canvas 0 0 750 317 upsampled 0;
+#N canvas 0 22 750 317 upsampled 0;
 #X floatatom 127 216 5 0 0 0 - - -;
 #X floatatom 127 106 5 0 0 0 - - -;
 #X floatatom 127 157 5 0 0 0 - - -;

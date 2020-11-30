@@ -1,4 +1,5 @@
 #N canvas 89 22 1049 512 10;
+#X declare -path ../pd;
 #X msg 500 112 bang;
 #X floatatom 500 372 5 0 0 1 Random_Number - -;
 #X msg 510 142 seed 12123;
@@ -89,6 +90,7 @@ generated. Weights can be set per value to change the probability.
 #X restore 688 341 pd MARKOV-EXAMPLE;
 #X text 584 217 List of random weights. For example '1 0 0 1' will
 output '0' or '3' with an even probability.;
+#X obj 903 22 declare -path ../pd;
 #X connect 0 0 6 0;
 #X connect 2 0 6 0;
 #X connect 4 0 13 0;

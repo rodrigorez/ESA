@@ -1,4 +1,5 @@
-#N canvas 289 87 898 692 10;
+#N canvas 289 86 898 692 10;
+#X declare -path ../pd;
 #X obj 604 377 openpanel;
 #X obj 604 424 soundfiler;
 #X obj 604 350 bng 20 250 50 0 empty empty open-sample 0 -6 1 10 -262144
@@ -44,10 +45,10 @@ of:;
 #X text 617 630 does this automatically for you.;
 #X text 301 180 original gain \, original pitch \, start at 0 \, play
 for 8000ms;
-#X floatatom 277 445 5 0 0 0 - - -, f 5;
+#X floatatom 277 445 5 0 0 0 - - -;
 #X msg 277 483 fade \$1 \$2;
 #X text 343 462 fade in & out time (default is 0 ms \, 2 ms);
-#X floatatom 330 444 5 0 0 0 - - -, f 5;
+#X floatatom 330 444 5 0 0 0 - - -;
 #X obj 277 463 pack 0 2;
 #X obj 512 538 s RJLIB;
 #X msg 512 507 sf-samplerate 44100;
@@ -57,6 +58,7 @@ is done by resampling;
 #X msg 158 209 play-samp 0.5 2;
 #X text 117 111 <table base name> <gain> <transposition> <start location
 (ms)> <duration (ms)>;
+#X obj 735 29 declare -path ../pd;
 #X connect 0 0 27 0;
 #X connect 2 0 0 0;
 #X connect 5 0 30 0;

@@ -1,5 +1,5 @@
-#N canvas 219 132 291 431 10;
-#N canvas 0 0 683 629 \$0-overview 0;
+#N canvas 111 77 291 431 10;
+#N canvas 0 22 683 629 \$0-overview 0;
 #X restore 72 299 pd \$0-overview;
 #X text 72 328 Help-click any object to;
 #X text 72 347 open the help file!;

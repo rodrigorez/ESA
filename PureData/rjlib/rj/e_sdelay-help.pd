@@ -1,4 +1,5 @@
 #N canvas 4 22 840 545 10;
+#X declare -path ../pd;
 #X floatatom 704 204 5 0 0 1 Delay_Time - -;
 #N canvas 0 22 450 300 plock 0;
 #X obj 97 145 *~;
@@ -41,6 +42,7 @@ to be lower/equal to the maxmium value set as an argument.;
 #X text 79 21 - static delay line;
 #X obj 87 372 e_dubdel;
 #X obj 157 372 e_pingpong;
+#X obj 693 24 declare -path ../pd;
 #X connect 0 0 3 1;
 #X connect 1 0 2 0;
 #X connect 1 0 3 0;

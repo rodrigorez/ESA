@@ -1,8 +1,9 @@
-#N struct 1113-symarray float x array symbols 1113-sym;
-#N struct 1113-sym symbol name float on;
+#N struct 8609-symarray float x array symbols 8609-sym;
+#N struct 8609-sym symbol name float on;
 #N canvas 34 60 877 510 10;
 #X declare -path .;
 #X declare -path .;
+#X declare -path ../pd;
 #N canvas 0 22 1081 586 detailed_help 0;
 #X obj 719 26 declare -path .;
 #X obj 21 291 soundoutput;
@@ -10,7 +11,7 @@
 #X obj 575 9 r \$0-GUI;
 #X obj 21 132 m_majorscale 50;
 #X obj 21 78 metro 500;
-#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 21 211 pack;
 #N canvas 0 58 1013 367 midi-control 0;
@@ -67,7 +68,7 @@ accepts. They all expect values in a range of 0-1.;
 #X symbolatom 350 271 20 0 0 0 - - -;
 #X obj 452 250 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 5 256;
+-262144 -1 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 21 154 makenote 127 300;
 #X floatatom 112 62 5 0 0 0 - - -;
@@ -285,6 +286,7 @@ rave \, bass;
 #X obj 570 86 pack;
 #X obj 570 49 notein;
 #X obj 570 118 s_ejun \$0-TAG;
+#X obj 718 465 declare -path ../pd;
 #X connect 7 0 9 0;
 #X connect 8 0 7 0;
 #X connect 8 1 7 1;

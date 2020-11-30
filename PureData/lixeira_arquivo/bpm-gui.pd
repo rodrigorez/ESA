@@ -1,9 +1,9 @@
-#N canvas 206 88 450 300 12;
+#N canvas 612 86 450 300 12;
 #X floatatom 135 82 5 1 350 0 - - -;
 #X msg 135 176 label \$1;
-#X obj 11 10 nbx 8 30 0 450 0 0 \$0-number_BPM_send empty empty 0 -8
-0 10 -262144 -258113 -1 120 256;
-#X obj 10 10 cnv 5 90 30 empty \$0-BPM_receive BPM 120 9 15 0 18 -66577
+#X obj 11 10 nbx 8 28 0 450 0 0 \$0-number_BPM_send empty empty 0 -8
+0 10 -262144 -258113 -1 0 256;
+#X obj 10 10 cnv 5 90 28 empty \$0-BPM_receive BPM 120 9 15 0 18 -66577
 -228856 0;
 #X text 181 81 <= click and drag;
 #X obj 135 118 makefilename BPM\ %d;
@@ -29,4 +29,4 @@
 #X connect 13 0 0 0;
 #X connect 14 0 15 0;
 #X connect 15 0 0 0;
-#X coords 0 -1 1 1 90 30 2 10 10;
+#X coords 0 -1 1 1 90 28 2 10 10;

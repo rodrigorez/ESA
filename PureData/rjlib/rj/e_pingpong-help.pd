@@ -1,4 +1,5 @@
 #N canvas 4 22 1200 551 10;
+#X declare -path ../pd;
 #X obj 544 128 vline~;
 #X obj 532 175 noise~;
 #X obj 514 195 *~;
@@ -74,6 +75,7 @@ channels can also be introduced.;
 #X text 1096 73 No-GUI;
 #X obj 513 390 e_pingpong \$0-delay1 2000;
 #X obj 97 449 e_dubdel;
+#X obj 1071 11 declare -path ../pd;
 #X connect 0 0 2 0;
 #X connect 0 0 9 0;
 #X connect 1 0 2 1;

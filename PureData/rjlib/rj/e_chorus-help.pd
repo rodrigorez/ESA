@@ -1,4 +1,5 @@
 #N canvas 64 174 917 509 10;
+#X declare -path ../pd;
 #X msg 616 214 help;
 #X msg 664 146 mod \$1;
 #X msg 598 145 freq \$1;
@@ -60,6 +61,7 @@ be 1/4 each. Default settings are freq 0.8 \, mod 1.8;
 #X text 11 11 e_chorus - a simple stereo chorus effect;
 #X obj 552 456 e_chorusr;
 #X text 481 456 Also see:;
+#X obj 777 28 declare -path ../pd;
 #X connect 0 0 12 1;
 #X connect 1 0 12 1;
 #X connect 2 0 12 1;

@@ -1,5 +1,6 @@
 #N canvas 113 88 1001 524 10;
 #X declare -path ./;
+#X declare -path ../pd;
 #N canvas 369 257 911 646 REFERENCE 0;
 #X text 24 31 Name: u_samplebank2;
 #X text 22 433 Tags: Audio \, Playback;
@@ -32,7 +33,7 @@ possible via global RJLIB receiver with "sf-samplerate");
 #X text 480 47 Example:;
 #X text 552 490 RjDj Library (https://github.com/rjdj/rjlib) - 2011
 ;
-#N canvas 0 22 469 282 HOW 0;
+#N canvas 0 22 469 282 HOW 1;
 #X obj 152 165 s_playtable;
 #X obj 152 207 soundoutput;
 #X msg 152 91 bang;
@@ -67,6 +68,7 @@ possible via global RJLIB receiver with "sf-samplerate");
 #X obj 733 194 s RJLIB;
 #X msg 733 163 sf-samplerate 44100;
 #X text 726 139 Set soundfile samplerate globally:;
+#X obj 870 13 declare -path ../pd;
 #X connect 9 0 19 0;
 #X connect 10 0 19 0;
 #X connect 11 0 19 0;

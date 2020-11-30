@@ -1,4 +1,5 @@
 #N canvas 4 22 857 533 10;
+#X declare -path ../pd;
 #X obj 558 206 mtof;
 #X floatatom 558 176 5 0 0 1 Center_Frequency - -;
 #X floatatom 601 241 5 1 5000 1 Q - -;
@@ -48,6 +49,7 @@ impulses. It's louder than peak norm.;
 #X obj 92 445 e_reslop;
 #X obj 162 445 e_lop2;
 #X obj 219 445 e_lop4;
+#X obj 713 28 declare -path ../pd;
 #X connect 0 0 6 0;
 #X connect 1 0 0 0;
 #X connect 2 0 8 2;

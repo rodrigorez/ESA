@@ -1,4 +1,5 @@
-#N canvas 506 49 888 636 10;
+#N canvas 392 49 888 636 10;
+#X declare -path ../pd;
 #X obj 692 502 openpanel;
 #X obj 691 577 table play-samp;
 #X msg 692 523 read -resize \$1 play-samp;
@@ -39,10 +40,10 @@ of:;
 #X obj 122 523 s_playtable;
 #X msg 220 521 stop;
 #X text 266 524 stop playing;
-#X floatatom 270 454 5 0 0 0 - - -, f 5;
+#X floatatom 270 454 5 0 0 0 - - -;
 #X msg 270 492 fade \$1 \$2;
 #X text 336 471 fade in & out time (default is 0 ms \, 2 ms);
-#X floatatom 323 453 5 0 0 0 - - -, f 5;
+#X floatatom 323 453 5 0 0 0 - - -;
 #X obj 270 472 pack 0 2;
 #X obj 508 430 s RJLIB;
 #X msg 508 399 sf-samplerate 44100;
@@ -51,6 +52,7 @@ of:;
 is done by resampling;
 #X text 117 111 <table name> <gain> <transposition> <start location
 (ms)> <duration (ms);
+#X obj 733 23 declare -path ../pd;
 #X connect 0 0 2 0;
 #X connect 2 0 3 0;
 #X connect 4 0 0 0;

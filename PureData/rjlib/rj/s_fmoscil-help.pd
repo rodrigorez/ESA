@@ -1,4 +1,5 @@
 #N canvas 194 25 869 675 10;
+#X declare -path ../pd;
 #X obj 172 413 s_fmoscil MYOSCIL;
 #X obj 512 123 g_nbx ratio;
 #X obj 512 152 g_nbx index;
@@ -10,7 +11,7 @@
 #X obj 512 391 g_nbx mS;
 #X obj 512 421 g_nbx mR;
 #X obj 512 331 g_nbx mA;
-#X obj 172 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 172 226 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 172 355 pack 0 0;
 #X obj 512 458 s \$0-fmoscil;
@@ -71,6 +72,7 @@
 #X text 87 160 Outlet 1+2: audio out (same signal);
 #X text 87 185 Outlet 3: sends current state when receiving a "save"
 message;
+#X obj 703 24 declare -path ../pd;
 #X connect 0 0 20 0;
 #X connect 0 1 20 1;
 #X connect 0 2 22 0;

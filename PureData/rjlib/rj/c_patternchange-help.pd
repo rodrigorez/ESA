@@ -1,4 +1,5 @@
-#N canvas 0 0 1037 526 10;
+#N canvas 0 22 1037 526 10;
+#X declare -path ../pd;
 #X msg 507 68 retrograde;
 #X msg 507 233 retro-inversion;
 #X msg 507 39 bang;
@@ -185,6 +186,7 @@ pattern out:;
 #X restore 7 36 pd REFERENCE;
 #X msg 609 431;
 #X msg 507 448;
+#X obj 899 16 declare -path ../pd;
 #X connect 0 0 14 0;
 #X connect 1 0 14 0;
 #X connect 2 0 14 0;

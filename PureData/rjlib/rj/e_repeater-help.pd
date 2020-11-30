@@ -1,4 +1,5 @@
 #N canvas 74 92 1073 583 10;
+#X declare -path ../pd;
 #X floatatom 598 68 5 0 1000 0 - - -;
 #X msg 604 120 feedback 1;
 #X obj 598 48 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
@@ -41,6 +42,7 @@ the "feedback" parameter.;
 -1 -1 0 1;
 #X text 641 67 length of the chunk repeated in ms triggers new recording.
 Max 1000!;
+#X obj 913 533 declare -path ../pd;
 #X connect 0 0 15 1;
 #X connect 1 0 15 1;
 #X connect 2 0 0 0;

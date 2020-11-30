@@ -1,4 +1,5 @@
 #N canvas 0 28 1188 499 10;
+#X declare -path ../pd;
 #X msg 712 201 info;
 #X msg 612 51 start;
 #X msg 652 111 stop;
@@ -55,7 +56,7 @@ This period can be changed with "fade x" messages.;
 #X symbolatom 517 453 12 0 0 1 table_name - -;
 #X obj 517 370 unpack s f f f;
 #X floatatom 598 393 6 0 0 1 samplerate - -;
-#N canvas 0 22 450 300 PLAYBACK 1;
+#N canvas 46 92 450 300 PLAYBACK 1;
 #X obj 150 154 s_playtable;
 #X obj 150 196 soundoutput;
 #X msg 150 60 bang;
@@ -73,6 +74,7 @@ in ms> <recording duration in samples> <samplerate>.;
 #X msg 771 339 sf-samplerate 44100;
 #X text 764 315 Set soundfile samplerate globally (default is 22050):
 ;
+#X obj 1054 10 declare -path ../pd;
 #X connect 0 0 8 1;
 #X connect 1 0 8 1;
 #X connect 2 0 8 1;

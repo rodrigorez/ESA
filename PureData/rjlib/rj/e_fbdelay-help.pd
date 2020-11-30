@@ -1,4 +1,5 @@
 #N canvas 66 126 1088 544 10;
+#X declare -path ../pd;
 #N canvas 129 294 659 624 REFERENCE 0;
 #X text 114 174 Argument 0: name for state saving (required);
 #X text 114 141 Summary: feedback delay line with lowpass filtered
@@ -37,7 +38,7 @@ feedback path.;
 #X msg 630 297 feedback \$1;
 #X obj 630 243 / 100;
 #X obj 630 137 vsl 15 100 0 100 0 0 empty empty feedback 0 -9 1 10
--262144 -1 -1 9900 1;
+-262144 -1 -1 0 1;
 #X obj 553 319 sig~ 0;
 #X obj 481 84 bng 24 250 50 0 empty empty empty 17 7 0 10 -4034 -1
 -1;
@@ -48,12 +49,12 @@ feedback path.;
 #X floatatom 884 250 8 0 0 0 - - -;
 #X floatatom 647 267 5 0 0 0 - - -;
 #X obj 953 113 vsl 15 128 0 127 0 0 empty empty delay_frequency 0 -9
-1 10 -262144 -1 -1 2400 1;
+1 10 -262144 -1 -1 0 1;
 #X msg 953 297 delayfreq \$1;
 #X obj 953 247 mtof;
 #X floatatom 991 250 5 0 0 1 pitch - -;
 #X obj 717 105 vsl 15 128 0 127 0 0 empty empty lowpass_cutoff_fr.
-0 -9 1 10 -262144 -1 -1 10600 1;
+0 -9 1 10 -262144 -1 -1 0 1;
 #X obj 717 239 mtof;
 #X floatatom 731 267 8 0 0 0 - - -;
 #X msg 717 297 lpfreq \$1;
@@ -73,6 +74,7 @@ feedback path.;
 #X obj 798 137 vsl 15 100 0 100 0 0 empty empty inputlevel 0 -9 1 10
 -262144 -1 -1 0 1;
 #X floatatom 815 267 5 0 0 0 - - -;
+#X obj 919 488 declare -path ../pd;
 #X connect 2 0 4 0;
 #X connect 3 0 4 1;
 #X connect 4 0 6 0;

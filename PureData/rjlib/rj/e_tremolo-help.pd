@@ -1,4 +1,5 @@
 #N canvas 4 22 759 534 10;
+#X declare -path ../pd;
 #X obj 513 223 e_tremolo mtrem;
 #X obj 513 132 osc~ 440;
 #X obj 513 304 soundoutput;
@@ -32,6 +33,7 @@ frequency in Hz \, default=5. dry <float> Dry/Wet mix as "dryness level"
 #X obj 615 131 loadbang;
 #X obj 92 352 e_chorus;
 #X obj 162 352 e_phaser;
+#X obj 620 24 declare -path ../pd;
 #X connect 0 0 2 0;
 #X connect 0 0 2 1;
 #X connect 1 0 0 0;

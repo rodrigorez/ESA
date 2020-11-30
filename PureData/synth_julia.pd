@@ -1,4 +1,4 @@
-#N canvas 0 22 536 480 12;
+#N canvas 208 235 536 480 12;
 #X declare -lib else;
 #X declare -path rjlib/pd;
 #X declare -path rjlib/rj;
@@ -7,10 +7,41 @@
 #X obj 65 254 outlet~;
 #X text 64 47 escreva seu synth aqui1;
 #X restore 114 173 pd synth_1;
-#X obj 108 61 keyboard 17 80 2 3 0 0 empty empty;
+#X obj 108 61 keyboard 17 80 1 3 0 0 empty empty;
 #X obj 408 52 declare -lib else;
 #X obj 373 5 declare -path rjlib/pd;
 #X obj 373 28 declare -path rjlib/rj;
 #X obj 62 442 outlet~;
+#X text 334 225 - melódicos;
+#X text 314 186 TIMBRES;
+#X text 334 205 - rítmicos;
+#X text 317 291 Cada timbre c/ até 4 presets;
+#N canvas 447 407 259 136 opções_de_synth 0;
+#X obj 10 10 bng 45 250 50 0 empty empty rjdj 8 20 0 13 -261682 -1
+-1;
+#X msg 10 66 \; pd-rjdj_algumas_opções vis 1;
+#X connect 0 0 1 0;
+#X coords 0 -1 1 1 45 45 2 10 10;
+#X restore 422 202 pd opções_de_synth;
+#N canvas 591 305 568 321 rjdj_algumas_opções 0;
+#X text 13 7 SYNTHS:;
+#X text 111 40 - grungy and grainy console and cheap synth sounds;
+#X obj 54 40 s_chip;
+#X text 111 72 - synth with 4 harmonic oscillator modulating a waveshaper
+and FM stage;
+#X obj 55 75 s_cwc;
+#X text 164 113 - electronic drums;
+#X obj 54 113 s_drumelectro;
+#X text 115 148 - juno like instrument;
+#X obj 55 148 s_ejun;
+#X text 116 181 - string synthesiser;
+#X obj 56 181 s_hstr;
+#X text 126 214 - FM emulation of rhodes e-piano;
+#X obj 56 214 s_rhodey;
+#X text 116 244 - slow synth pads;
+#X obj 56 244 s_spad;
+#X text 106 274 - type B waveshaper;
+#X obj 56 274 s_wsb;
+#X restore 373 75 pd rjdj_algumas_opções;
 #X connect 1 0 0 0;
 #X connect 1 0 6 0;

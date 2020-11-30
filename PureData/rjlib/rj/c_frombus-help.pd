@@ -1,4 +1,5 @@
 #N canvas 148 65 943 552 10;
+#X declare -path ../pd;
 #X msg 551 127 ONE;
 #X msg 586 128 TWO;
 #X msg 607 155 set ONE;
@@ -28,6 +29,7 @@ audio to a bus. Please see the [c_bus] help file for details.;
 #X text 488 440 Also see:;
 #X text 18 16 c_frombus - receive from a named audio bus;
 #X text 480 92 Receiving from named busses;
+#X obj 795 286 declare -path ../pd;
 #X connect 0 0 6 0;
 #X connect 1 0 6 0;
 #X connect 2 0 6 0;

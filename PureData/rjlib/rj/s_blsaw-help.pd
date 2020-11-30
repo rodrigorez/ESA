@@ -1,4 +1,5 @@
 #N canvas 84 167 866 308 10;
+#X declare -path ../pd;
 #X floatatom 522 119 5 0 0 0 - - -;
 #X floatatom 640 120 5 0 0 0 - - -;
 #X obj 522 138 s_blsaw;
@@ -20,6 +21,7 @@ wave similar to the Pd builtin phasor~;
 #X restore 17 39 pd REFERENCE;
 #X text 531 223 less aliasing;
 #X text 20 10 s_blsaw - bandlimited saw wave;
+#X obj 716 37 declare -path ../pd;
 #X connect 0 0 2 0;
 #X connect 1 0 3 0;
 #X connect 2 0 7 0;

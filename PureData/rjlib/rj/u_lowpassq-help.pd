@@ -1,4 +1,5 @@
 #N canvas 69 146 822 521 10;
+#X declare -path ../pd;
 #X obj 608 156 mtof;
 #X floatatom 665 169 5 0 0 1 Q - -;
 #X floatatom 608 136 5 0 0 1 Frequency - -;
@@ -19,7 +20,7 @@
 #X obj 557 294 *~ 0.3;
 #X obj 557 324 e_beequad;
 #X obj 608 214 u_lowpassq;
-#N canvas 181 176 582 570 REFERENCE 1;
+#N canvas 181 176 582 570 REFERENCE 0;
 #X text 24 61 Summary: Compute biquad coefficients for a resonant lowpass
 filter with Q.;
 #X text 24 31 Name: [u_lowpassq];
@@ -45,6 +46,7 @@ are hot and trigger new coefficients.;
 filter with Q.;
 #X obj 557 354 soundoutput;
 #X msg 657 307;
+#X obj 693 20 declare -path ../pd;
 #X connect 0 0 7 0;
 #X connect 1 0 7 1;
 #X connect 2 0 0 0;

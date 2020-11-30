@@ -1,4 +1,5 @@
-#N canvas 144 59 843 723 10;
+#N canvas 144 55 843 723 10;
+#X declare -path ../pd;
 #X obj 234 414 sig~ 0;
 #X obj 234 389 mtof;
 #X floatatom 234 369 5 0 0 0 - - -;
@@ -28,9 +29,9 @@
 #X floatatom 573 195 5 0 0 0 - - -;
 #X text 157 333 Here's a full example:;
 #X obj 491 293 hsl 128 15 0 40000 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 4070 1;
+-262144 -1 -1 0 1;
 #X obj 491 217 hsl 128 15 0 40000 0 0 empty empty empty -2 -8 0 10
--262144 -1 -1 4470 1;
+-262144 -1 -1 0 1;
 #X text 134 90 Inlets (all hot):;
 #X text 62 26 m_keyfollow;
 #X text 134 47 m_keyfollow applies keyboard following to filter frequency
@@ -42,6 +43,7 @@ mapped over a power curve that crosses middle C (261 Hz) and is bent
 according to the key_follow value;
 #X obj 376 485 m_keyfollow;
 #X obj 481 242 m_keyfollow;
+#X obj 641 35 declare -path ../pd;
 #X connect 0 0 13 0;
 #X connect 1 0 0 0;
 #X connect 1 0 9 0;

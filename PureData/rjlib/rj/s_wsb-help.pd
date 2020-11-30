@@ -1,8 +1,9 @@
-#N struct 1113-symarray float x array symbols 1113-sym;
-#N struct 1113-sym symbol name float on;
+#N struct 10096-symarray float x array symbols 10096-sym;
+#N struct 10096-sym symbol name float on;
 #N canvas 34 60 877 510 10;
 #X declare -path .;
 #X declare -path .;
+#X declare -path ../pd;
 #N canvas 103 57 1081 586 detailed_help 0;
 #X obj 719 26 declare -path .;
 #X obj 22 336 soundoutput;
@@ -10,7 +11,7 @@
 #X obj 575 9 r \$0-GUI;
 #X obj 21 132 m_majorscale 50;
 #X obj 21 78 metro 500;
-#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+#X obj 21 54 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0 1
 ;
 #X obj 21 211 pack;
 #N canvas 0 58 1013 367 midi-control 0;
@@ -66,7 +67,7 @@ accepts. They all expect values in a range of 0-1.;
 #X symbolatom 350 271 20 0 0 0 - - -;
 #X obj 452 248 s \$0-GUI;
 #X obj 350 200 nbx 3 20 0 256 0 0 empty empty empty 0 -8 0 16 -260097
--262144 -1 8 256;
+-262144 -1 0 256;
 #X obj 350 177 pgmin 1;
 #X obj 21 154 makenote 127 300;
 #X floatatom 112 62 5 0 0 0 - - -;
@@ -332,6 +333,7 @@ of shaping at each stage. ajf2010;
 #X obj 575 51 notein;
 #X obj 575 120 s_wsb \$0-TAG;
 #X text 7 14 s_wsb - waveshaping synth type B;
+#X obj 736 473 declare -path ../pd;
 #X connect 6 0 8 0;
 #X connect 7 0 6 0;
 #X connect 7 1 6 1;

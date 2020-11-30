@@ -1,4 +1,5 @@
 #N canvas 230 26 812 724 10;
+#X declare -path ../pd;
 #X obj 216 328 soundoutput;
 #X msg 368 242 help;
 #X msg 470 530 pwmdepth \$1;
@@ -78,7 +79,7 @@
 #X coords 0 1 441 -1 200 140 1;
 #X restore 492 227 graph;
 #X obj 276 453 hsl 128 15 -1 1 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 6300 1;
+-1 -1 0 1;
 #X obj 262 281 s_osc NAME saw;
 #X text 272 419 Set triangle wave slope: 0=tri \, -0.999 = phasor \,
 0.999 = phasor backwards;
@@ -90,11 +91,11 @@
 #X msg 135 583 tri \$1;
 #X obj 107 523 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 107 542 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 107 542 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 107 563 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X obj 107 583 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
+#X obj 107 583 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X text 179 656 "switch <sine> <saw> <square> <tri>";
 #X text 182 673 Use 1 and 0 to switch oscillators on and off.;
@@ -105,6 +106,7 @@ oscillator's frequency \, so that you can modulate it at audio rate.
 ;
 #X text 111 148 The second inlet accepts messages explained below.
 ;
+#X obj 661 26 declare -path ../pd;
 #X connect 1 0 32 1;
 #X connect 2 0 6 0;
 #X connect 3 0 6 0;

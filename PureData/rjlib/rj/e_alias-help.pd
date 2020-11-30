@@ -1,4 +1,5 @@
 #N canvas 301 163 803 533 10;
+#X declare -path ../pd;
 #X obj 522 171 osc~ 220;
 #X obj 522 201 *~ 0.5;
 #X floatatom 621 168 5 0 0 0 - - -;
@@ -31,6 +32,7 @@ regulates dry/wet mix \, default 0 which is fully wet.;
 #X text 479 508 RjDj Library (https://github.com/rjdj/rjlib) - 2011
 ;
 #X obj 522 231 e_alias \$0-name 4;
+#X obj 656 16 declare -path ../pd;
 #X connect 0 0 1 0;
 #X connect 1 0 13 0;
 #X connect 2 0 4 0;

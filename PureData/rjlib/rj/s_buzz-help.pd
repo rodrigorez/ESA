@@ -1,15 +1,16 @@
 #N canvas 147 43 925 425 10;
+#X declare -path ../pd;
 #X floatatom 538 55 5 0 0 0 - - -;
 #X obj 597 281 tabwrite~ \$0-scope;
 #N canvas 0 0 450 300 (subpatch) 0;
 #X array \$0-scope 2205 float 0;
 #X coords 0 1 2204 -1 200 140 1;
 #X restore 706 123 graph;
-#X obj 597 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 597 214 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1
 1;
 #X obj 538 82 mtof;
 #X obj 621 53 hsl 128 15 0 0.9 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 0 1;
+-1 -1 12700 1;
 #X obj 618 83 moses 1;
 #X text 633 34 Harmonicity-Env;
 #X text 679 84 don't go equal or over 1!;
@@ -35,6 +36,7 @@ It generates a waveform using the summation forumula: out = sqrt[(1-a^2)(1+a^2)]
 #X coords 0 -1 1 1 450 250 1 100 20;
 #X restore 21 45 pd REFERENCE;
 #X text 20 22 s_buzz - buzz harmonics generator;
+#X obj 763 324 declare -path ../pd;
 #X connect 0 0 4 0;
 #X connect 3 0 13 0;
 #X connect 4 0 14 0;

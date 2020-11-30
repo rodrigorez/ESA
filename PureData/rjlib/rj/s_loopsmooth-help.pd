@@ -1,4 +1,5 @@
 #N canvas 195 231 957 464 10;
+#X declare -path ../pd;
 #X msg 687 221 help;
 #X obj 483 307 soundoutput;
 #X obj 482 171 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
@@ -82,6 +83,7 @@ looping);
 #X obj 762 235 s RJLIB;
 #X msg 762 214 sf-samplerate 44100;
 #X text 708 194 Set soundfile samplerate globally:;
+#X obj 807 407 declare -path ../pd;
 #X connect 0 0 16 1;
 #X connect 2 0 16 0;
 #X connect 3 0 10 0;
